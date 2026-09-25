@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halil Talha Ertan</title>
+<meta name="description" content="Halil Talha Ertan, independent researcher in Istanbul, working on cellular automata, adaptive networks and artificial life.">
+<style>
+  :root { --text:#1f2328; --muted:#59636e; --accent:#0b5cad; --line:#e3e6ea; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family: Georgia, "Times New Roman", serif; color:var(--text);
+         line-height:1.6; background:#fff; }
+  main { max-width:720px; margin:0 auto; padding:56px 24px 72px; }
+  h1 { font-size:2.1rem; margin:0 0 4px; font-weight:normal; letter-spacing:0.01em; }
+  .affil { color:var(--muted); margin:0 0 20px; font-size:1.05rem; }
+  .links { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size:0.95rem; margin-bottom:36px; }
+  .links a, .links span { margin-right:18px; white-space:nowrap; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  h2 { font-size:1.15rem; font-weight:normal; text-transform:uppercase; letter-spacing:0.08em;
+       color:var(--muted); border-bottom:1px solid var(--line); padding-bottom:6px; margin:40px 0 16px; }
+  .pub-title { font-size:1.08rem; margin:0 0 2px; }
+  .pub-meta { color:var(--muted); font-size:0.95rem; margin:0 0 8px; }
+  .pub-links { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size:0.9rem; }
+  .pub-links a { margin-right:14px; }
+  figure { margin:20px 0 0; }
+  figure img { width:100%; height:auto; border:1px solid var(--line); }
+  figcaption { color:var(--muted); font-size:0.9rem; margin-top:6px; }
+  .tags { color:var(--text); }
+  footer { color:var(--muted); font-size:0.85rem; margin-top:56px; border-top:1px solid var(--line); padding-top:12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Halil Talha Ertan</h1>
+  <p class="affil">Independent Researcher, Istanbul</p>
+  <div class="links">
+    <a href="https://github.com/haliltalhaertan">GitHub</a>
+    <!-- <a href="https://scholar.google.com/citations?user=XXXX">Google Scholar</a> -->
+    <!-- <a href="https://orcid.org/0000-0000-0000-0000">ORCID</a> -->
+    <span>haliltalhaertan [at] gmail [dot] com</span>
+  </div>
+
+  <h2>About</h2>
+  <p>I am interested in memory: how it can arise on its own in simple dynamical systems,
+  and how it can be stored and searched cheaply in practical ones. One line of work studies network
+  automata whose connections are shaped by the dynamics: particles form and break bonds, a Boolean
+  rule runs on the resulting graph, and the question is what such systems can store. Another line
+  measures compact memory retrieval for conversational agents against standard baselines such as BM25.
+  I prefer exact or exhaustively checked results, negative results reported as such,
+  and fully reproducible code.</p>
+  <p class="tags"><strong>Interests:</strong> cellular automata, adaptive networks, complex systems, artificial life, information retrieval.</p>
+
+  <h2>Papers</h2>
+  <p class="pub-title">Memory without mechanics: exact analysis of a particle-network automaton with rule-driven bonds</p>
+  <p class="pub-meta">H. T. Ertan &middot; Preprint, 2026 &middot; <em>arXiv link coming soon</em></p>
+  <div class="pub-links">
+    <!-- <a href="https://arxiv.org/abs/XXXX.XXXXX">arXiv</a> -->
+    <!-- <a href="https://arxiv.org/pdf/XXXX.XXXXX">PDF</a> -->
+    <a href="https://github.com/haliltalhaertan/autogenesis-u0">Code &amp; reproduction</a>
+  </div>
+  <p>In a model where particles bond by distance and a Boolean rule gates the bonds, the mechanics
+  become exactly inert at rest. An exhaustive search over all connected candidate graphs up to seven nodes
+  finds exactly one that carries a clocked two-bit register. Its states occupy identical positions
+  and differ only in which bonds exist. The mechanical layer adds nothing beyond triangle-rich graphs,
+  and a flat bond-energy landscape explains why the register is fragile.</p>
+  <figure>
+    <img src="register.png" alt="The minimal two-bit register: seven nodes, ten candidate bonds.">
+    <figcaption>The minimal two-bit register (n = 7, E = 10). Each of the four stored values (x, y) is a period-2 cycle; all states share the same particle positions and differ only in which bonds exist and which nodes are active.</figcaption>
+  </figure>
+
+  <p class="pub-title" style="margin-top:36px">Twelve Bytes Against an Inverted Index: What a Compact-Code Memory Retrieval Programme Found, and Which Configuration Choices Decided It</p>
+  <p class="pub-meta">H. T. Ertan &middot; Manuscript, 2026 &middot; <em>arXiv submission in preparation</em></p>
+  <div class="pub-links">
+    <a href="https://github.com/haliltalhaertan/llmzip-paper">Paper, data ledger &amp; code</a>
+  </div>
+  <p>Can a 12-byte code per document replace or complement a BM25 index when an agent searches its
+  conversational memory? Across four benchmarks it does not beat BM25 on any measured axis.
+  Five configuration choices (document unit, query cohort, projection family, benchmark and metric)
+  each reversed a verdict with everything else fixed. Two lossless compactions leave every output bit
+  unchanged while cutting the encoder vocabulary by about 63% and the BM25 index by about 76%.</p>
+
+  <footer>Last updated September 2026.</footer>
+</main>
+</body>
+</html>
