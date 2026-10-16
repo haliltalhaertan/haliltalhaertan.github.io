@@ -55,17 +55,26 @@
 
   <h2>Papers</h2>
   <p class="pub-title">Memory without mechanics: exact analysis of a particle-network automaton with rule-driven bonds</p>
-  <p class="pub-meta">H. T. Ertan &middot; Preprint, 2026 &middot; <em>arXiv link coming soon</em></p>
+  <p class="pub-meta">H. T. Ertan &middot; Autogenesis U0 &middot; Preprint, 2026</p>
   <div class="pub-links">
     <!-- <a href="https://arxiv.org/abs/XXXX.XXXXX">arXiv</a> -->
     <!-- <a href="https://arxiv.org/pdf/XXXX.XXXXX">PDF</a> -->
     <a href="https://github.com/haliltalhaertan/autogenesis-u0">Code &amp; reproduction</a>
+    <a href="https://github.com/haliltalhaertan/autogenesis-u0/blob/main/paper_repro/claims_ledger.csv">Claims ledger</a>
   </div>
-  <p>In a model where particles bond by distance and a Boolean rule gates the bonds, the mechanics
-  become exactly inert at rest. An exhaustive search over all connected candidate graphs up to seven nodes
-  finds exactly one that carries a clocked two-bit register. Its states occupy identical positions
-  and differ only in which bonds exist. The mechanical layer adds nothing beyond triangle-rich graphs,
-  and a flat bond-energy landscape explains why the register is fragile.</p>
+  <p>Autogenesis U0 couples damped particles in 3D, distance-based bonds with hysteresis,
+  and a Boolean rule on the bond graph. On rest scaffolds, the particle positions stay fixed
+  while the bonds and node states can continue to change. The reported exhaustive search covers
+  491 connected graph classes: all graphs up to six nodes, and seven-node graphs with at most
+  ten candidate edges. Exactly one class supports the specified clocked two-bit register,
+  with seven nodes and ten candidate bonds.</p>
+  <p>The register has an explicit physical realization, but remains fragile under single-node
+  and bond flips. The tested matched-null comparisons do not establish an advantage beyond the
+  graph properties controlled for. These results concern the specified U0 dynamics and search
+  family; they do not establish robust memory or spontaneous self-assembly of the register.</p>
+  <p class="pub-meta">The public repository includes the reference engine, equivalence and invariance
+  checks, reproduction scripts, and a claim-by-claim ledger. See the README for pinned versions
+  and reproducibility caveats.</p>
   <figure>
     <img src="register.png" alt="The minimal two-bit register: seven nodes, ten candidate bonds.">
     <figcaption>The minimal two-bit register (n = 7, E = 10). Each of the four stored values (x, y) is a period-2 cycle; all states share the same particle positions and differ only in which bonds exist and which nodes are active.</figcaption>
