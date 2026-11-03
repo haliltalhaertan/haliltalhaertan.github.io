@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 250" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,Segoe UI,sans-serif">
+<title id="t">ConvoMem held-out test: accuracy difference with 95% interval</title><desc id="d">B minus A = -0.6 points, 95% cluster-bootstrap interval -1.27 to +0.25. Pre-set allowed loss margin -3 points. Accuracy A 350/500, B 347/500.</desc>
+<rect width="760" height="250" fill="#fff"/>
+<text x="24.0" y="30.0" font-size="15" fill="#172d35" text-anchor="start" font-weight="700" >Shortened (B) minus full text (A), accuracy in percentage points</text>
+<rect x="90.0" y="70.0" width="110.9" height="110.0" rx="0" fill="#f6e4dd" />
+<text x="145.5" y="90.0" font-size="11" fill="#b5523b" text-anchor="middle" font-weight="600" >beyond allowed</text>
+<text x="145.5" y="104.0" font-size="11" fill="#b5523b" text-anchor="middle" font-weight="600" >loss (−3 pts)</text>
+<line x1="90.0" y1="70.0" x2="90.0" y2="180.0" stroke="#d9e1df" stroke-width="1" />
+<text x="90.0" y="198.0" font-size="12" fill="#53676c" text-anchor="middle" font-weight="400" >-4</text>
+<line x1="200.9" y1="70.0" x2="200.9" y2="180.0" stroke="#d9e1df" stroke-width="1" />
+<text x="200.9" y="198.0" font-size="12" fill="#53676c" text-anchor="middle" font-weight="400" >-3</text>
+<line x1="311.8" y1="70.0" x2="311.8" y2="180.0" stroke="#d9e1df" stroke-width="1" />
+<text x="311.8" y="198.0" font-size="12" fill="#53676c" text-anchor="middle" font-weight="400" >-2</text>
+<line x1="422.7" y1="70.0" x2="422.7" y2="180.0" stroke="#d9e1df" stroke-width="1" />
+<text x="422.7" y="198.0" font-size="12" fill="#53676c" text-anchor="middle" font-weight="400" >-1</text>
+<line x1="533.6" y1="70.0" x2="533.6" y2="180.0" stroke="#d9e1df" stroke-width="1" />
+<text x="533.6" y="198.0" font-size="12" fill="#53676c" text-anchor="middle" font-weight="400" >0</text>
+<line x1="644.5" y1="70.0" x2="644.5" y2="180.0" stroke="#d9e1df" stroke-width="1" />
+<text x="644.5" y="198.0" font-size="12" fill="#53676c" text-anchor="middle" font-weight="400" >+1</text>
+<line x1="533.6" y1="64.0" x2="533.6" y2="184.0" stroke="#172d35" stroke-width="1.5" />
+<line x1="200.9" y1="64.0" x2="200.9" y2="184.0" stroke="#b5523b" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="393.2" y1="120.0" x2="561.8" y2="120.0" stroke="#146b69" stroke-width="4" />
+<line x1="393.2" y1="110.0" x2="393.2" y2="130.0" stroke="#146b69" stroke-width="3" />
+<line x1="561.8" y1="110.0" x2="561.8" y2="130.0" stroke="#146b69" stroke-width="3" />
+<circle cx="467.1" cy="120.0" r="8" fill="#146b69" stroke="none" stroke-width="2"/>
+<text x="467.1" y="100.0" font-size="13" fill="#172d35" text-anchor="middle" font-weight="700" >−0.6 pts  [−1.27, +0.25]</text>
+<text x="541.6" y="160.0" font-size="11" fill="#53676c" text-anchor="start" font-weight="400" >interval crosses 0</text>
+<text x="24.0" y="232.0" font-size="12.5" fill="#172d35" text-anchor="start" font-weight="600" >Correct: A 350 / 500 (70.0%) · B 347 / 500 (69.4%) · tokens saved 19.55% &lt; 20% bar → verdict: INCONCLUSIVE</text>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 250" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,Segoe UI,sans-serif">
+<title id="t">Reader input-token reduction against full text</title><desc id="d">LongMemEval-S arm B 23.239%, arm C 23.803%; ConvoMem held-out arm B 19.546% against a pre-set 20% bar.</desc>
+<rect width="760" height="250" fill="#fff"/>
+<text x="24.0" y="30.0" font-size="15" fill="#172d35" text-anchor="start" font-weight="700" stroke="#fff" stroke-width="4" paint-order="stroke">Fewer reader input tokens than full text (successful calls)</text>
+<line x1="234.0" y1="68.0" x2="234.0" y2="202.0" stroke="#d9e1df" stroke-width="1" />
+<text x="234.0" y="220.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >0%</text>
+<line x1="387.3" y1="68.0" x2="387.3" y2="202.0" stroke="#d9e1df" stroke-width="1" />
+<text x="387.3" y="220.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >10%</text>
+<line x1="540.7" y1="68.0" x2="540.7" y2="202.0" stroke="#d9e1df" stroke-width="1" />
+<text x="540.7" y="220.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >20%</text>
+<line x1="694.0" y1="68.0" x2="694.0" y2="202.0" stroke="#d9e1df" stroke-width="1" />
+<text x="694.0" y="220.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >30%</text>
+<text x="222.0" y="87.0" font-size="13" fill="#172d35" text-anchor="end" font-weight="600" >LongMemEval-S · B</text>
+<text x="222.0" y="102.0" font-size="11" fill="#53676c" text-anchor="end" font-weight="400" >seen questions, no clean holdout</text>
+<rect x="234.0" y="74.0" width="356.3" height="30.0" rx="3" fill="#146b69" />
+<text x="598.3" y="94.0" font-size="13" fill="#172d35" text-anchor="start" font-weight="700" stroke="#fff" stroke-width="4" paint-order="stroke">23.24%</text>
+<text x="222.0" y="133.0" font-size="13" fill="#172d35" text-anchor="end" font-weight="600" >LongMemEval-S · C</text>
+<text x="222.0" y="148.0" font-size="11" fill="#53676c" text-anchor="end" font-weight="400" >seen questions, adaptive add-on</text>
+<rect x="234.0" y="120.0" width="365.0" height="30.0" rx="3" fill="#7fb3ad" />
+<text x="607.0" y="140.0" font-size="13" fill="#172d35" text-anchor="start" font-weight="700" stroke="#fff" stroke-width="4" paint-order="stroke">23.80%</text>
+<text x="222.0" y="179.0" font-size="13" fill="#172d35" text-anchor="end" font-weight="600" >ConvoMem · B</text>
+<text x="222.0" y="194.0" font-size="11" fill="#53676c" text-anchor="end" font-weight="400" >held-out, rules locked in advance</text>
+<rect x="234.0" y="166.0" width="299.7" height="30.0" rx="3" fill="#d89440" />
+<text x="541.7" y="186.0" font-size="13" fill="#172d35" text-anchor="start" font-weight="700" stroke="#fff" stroke-width="4" paint-order="stroke">19.55%</text>
+<line x1="540.7" y1="60.0" x2="540.7" y2="200.0" stroke="#b5523b" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="540.7" y="54.0" font-size="11.5" fill="#b5523b" text-anchor="middle" font-weight="700" stroke="#fff" stroke-width="4" paint-order="stroke">pre-set 20% bar (ConvoMem test)</text>
+</svg>

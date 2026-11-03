@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,Segoe UI,sans-serif">
+<title id="t">LongMemEval-S shortening pilot: correct answers and reader input tokens</title><desc id="d">Out of 487 questions: A full text 419 correct, B older anchored selector 417, C exchange packer 414. Input tokens of successful reader calls: A 7.31 million, B 5.61 million, C 5.57 million.</desc>
+<rect width="760" height="430" fill="#fff"/>
+<text x="24.0" y="32.0" font-size="15" fill="#172d35" text-anchor="start" font-weight="700" >Correct answers (out of 487 questions)</text>
+<line x1="224.0" y1="50.0" x2="224.0" y2="184.0" stroke="#d9e1df" stroke-width="1" />
+<text x="224.0" y="202.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >0</text>
+<line x1="320.5" y1="50.0" x2="320.5" y2="184.0" stroke="#d9e1df" stroke-width="1" />
+<text x="320.5" y="202.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >100</text>
+<line x1="417.0" y1="50.0" x2="417.0" y2="184.0" stroke="#d9e1df" stroke-width="1" />
+<text x="417.0" y="202.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >200</text>
+<line x1="513.5" y1="50.0" x2="513.5" y2="184.0" stroke="#d9e1df" stroke-width="1" />
+<text x="513.5" y="202.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >300</text>
+<line x1="610.0" y1="50.0" x2="610.0" y2="184.0" stroke="#d9e1df" stroke-width="1" />
+<text x="610.0" y="202.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >400</text>
+<line x1="694.0" y1="50.0" x2="694.0" y2="184.0" stroke="#d9e1df" stroke-width="1" />
+<text x="694.0" y="202.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >487</text>
+<text x="212.0" y="69.0" font-size="13" fill="#172d35" text-anchor="end" font-weight="600" >A · full text</text>
+<text x="212.0" y="84.0" font-size="11" fill="#53676c" text-anchor="end" font-weight="400" >5 sessions, untouched</text>
+<rect x="224.0" y="56.0" width="404.4" height="30.0" rx="3" fill="#a9b6b4" />
+<text x="636.4" y="76.0" font-size="13" fill="#172d35" text-anchor="start" font-weight="700" >419  (86.0%)</text>
+<text x="212.0" y="115.0" font-size="13" fill="#172d35" text-anchor="end" font-weight="600" >B · anchored 75%</text>
+<text x="212.0" y="130.0" font-size="11" fill="#53676c" text-anchor="end" font-weight="400" >older selector</text>
+<rect x="224.0" y="102.0" width="402.4" height="30.0" rx="3" fill="#146b69" />
+<text x="634.4" y="122.0" font-size="13" fill="#172d35" text-anchor="start" font-weight="700" >417  (85.6%)</text>
+<text x="212.0" y="161.0" font-size="13" fill="#172d35" text-anchor="end" font-weight="600" >C · exchange packer 75%</text>
+<text x="212.0" y="176.0" font-size="11" fill="#53676c" text-anchor="end" font-weight="400" >added after A/B were seen</text>
+<rect x="224.0" y="148.0" width="399.5" height="30.0" rx="3" fill="#7fb3ad" />
+<text x="631.5" y="168.0" font-size="13" fill="#172d35" text-anchor="start" font-weight="700" >414  (85.0%)</text>
+<text x="24.0" y="240.0" font-size="15" fill="#172d35" text-anchor="start" font-weight="700" >Reader input tokens, successful calls only (millions)</text>
+<line x1="224.0" y1="258.0" x2="224.0" y2="392.0" stroke="#d9e1df" stroke-width="1" />
+<text x="224.0" y="410.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >0</text>
+<line x1="341.5" y1="258.0" x2="341.5" y2="392.0" stroke="#d9e1df" stroke-width="1" />
+<text x="341.5" y="410.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >2</text>
+<line x1="459.0" y1="258.0" x2="459.0" y2="392.0" stroke="#d9e1df" stroke-width="1" />
+<text x="459.0" y="410.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >4</text>
+<line x1="576.5" y1="258.0" x2="576.5" y2="392.0" stroke="#d9e1df" stroke-width="1" />
+<text x="576.5" y="410.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >6</text>
+<line x1="694.0" y1="258.0" x2="694.0" y2="392.0" stroke="#d9e1df" stroke-width="1" />
+<text x="694.0" y="410.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >8</text>
+<text x="212.0" y="277.0" font-size="13" fill="#172d35" text-anchor="end" font-weight="600" >A · full text</text>
+<text x="212.0" y="292.0" font-size="11" fill="#53676c" text-anchor="end" font-weight="400" >5 sessions, untouched</text>
+<rect x="224.0" y="264.0" width="429.4" height="30.0" rx="3" fill="#a9b6b4" />
+<text x="661.4" y="284.0" font-size="13" fill="#172d35" text-anchor="start" font-weight="700" >7.31 M</text>
+<text x="212.0" y="323.0" font-size="13" fill="#172d35" text-anchor="end" font-weight="600" >B · anchored 75%</text>
+<text x="212.0" y="338.0" font-size="11" fill="#53676c" text-anchor="end" font-weight="400" >older selector</text>
+<rect x="224.0" y="310.0" width="329.6" height="30.0" rx="3" fill="#146b69" />
+<text x="561.6" y="330.0" font-size="13" fill="#172d35" text-anchor="start" font-weight="700" >5.61 M</text>
+<text x="212.0" y="369.0" font-size="13" fill="#172d35" text-anchor="end" font-weight="600" >C · exchange packer 75%</text>
+<text x="212.0" y="384.0" font-size="11" fill="#53676c" text-anchor="end" font-weight="400" >added after A/B were seen</text>
+<rect x="224.0" y="356.0" width="327.2" height="30.0" rx="3" fill="#7fb3ad" />
+<text x="559.2" y="376.0" font-size="13" fill="#172d35" text-anchor="start" font-weight="700" >5.57 M</text>
+</svg>

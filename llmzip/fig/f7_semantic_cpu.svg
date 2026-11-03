@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 260" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,Segoe UI,sans-serif">
+<title id="t">Semantic hybrid CPU cost versus the allowed cap</title><desc id="d">Composed cold CPU ratio against baseline: 1 thread 138.5x, 2 threads 173.3x, 4 threads 234.4x. The allowed cap was 5x.</desc>
+<rect width="760" height="260" fill="#fff"/>
+<text x="24.0" y="30.0" font-size="15" fill="#172d35" text-anchor="start" font-weight="700" >CPU cost of the semantic hybrid vs baseline (cold start, log scale)</text>
+<line x1="210.0" y1="56.0" x2="210.0" y2="206.0" stroke="#d9e1df" stroke-width="1" />
+<text x="210.0" y="224.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >1×</text>
+<line x1="345.4" y1="56.0" x2="345.4" y2="206.0" stroke="#d9e1df" stroke-width="1" />
+<text x="345.4" y="224.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >5×</text>
+<line x1="403.8" y1="56.0" x2="403.8" y2="206.0" stroke="#d9e1df" stroke-width="1" />
+<text x="403.8" y="224.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >10×</text>
+<line x1="496.2" y1="56.0" x2="496.2" y2="206.0" stroke="#d9e1df" stroke-width="1" />
+<text x="496.2" y="224.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >30×</text>
+<line x1="597.5" y1="56.0" x2="597.5" y2="206.0" stroke="#d9e1df" stroke-width="1" />
+<text x="597.5" y="224.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >100×</text>
+<line x1="690.0" y1="56.0" x2="690.0" y2="206.0" stroke="#d9e1df" stroke-width="1" />
+<text x="690.0" y="224.0" font-size="11" fill="#53676c" text-anchor="middle" font-weight="400" >300×</text>
+<text x="196.0" y="84.0" font-size="13" fill="#172d35" text-anchor="end" font-weight="600" >1 thread</text>
+<rect x="210.0" y="64.0" width="415.0" height="30.0" rx="3" fill="#b5523b" />
+<text x="633.0" y="84.0" font-size="13" fill="#172d35" text-anchor="start" font-weight="700" >139×</text>
+<text x="196.0" y="130.0" font-size="13" fill="#172d35" text-anchor="end" font-weight="600" >2 threads</text>
+<rect x="210.0" y="110.0" width="433.8" height="30.0" rx="3" fill="#b5523b" />
+<text x="651.8" y="130.0" font-size="13" fill="#172d35" text-anchor="start" font-weight="700" >173×</text>
+<text x="196.0" y="176.0" font-size="13" fill="#172d35" text-anchor="end" font-weight="600" >4 threads</text>
+<rect x="210.0" y="156.0" width="459.2" height="30.0" rx="3" fill="#b5523b" />
+<text x="677.2" y="176.0" font-size="13" fill="#172d35" text-anchor="start" font-weight="700" >234×</text>
+<line x1="345.4" y1="48.0" x2="345.4" y2="210.0" stroke="#146b69" stroke-width="2.5" stroke-dasharray="6 4"/>
+<text x="351.4" y="48.0" font-size="12" fill="#146b69" text-anchor="start" font-weight="700" >allowed: 5×</text>
+<text x="24.0" y="250.0" font-size="12.5" fill="#172d35" text-anchor="start" font-weight="600" >Search got a little better, but it costs far more computer time than allowed → not adopted</text>
+</svg>

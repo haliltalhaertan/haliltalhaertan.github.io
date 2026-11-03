@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LLMZIP: current findings | Halil Talha Ertan</title>
+<meta name="description" content="Current findings of the LLMZIP programme on shortening and searching conversational memory for language-model agents: what held, what did not, and what is still open.">
+<link rel="canonical" href="https://haliltalhaertan.github.io/llmzip/">
+<style>
+:root{--ink:#172d35;--muted:#53676c;--accent:#146b69;--line:#d9e1df;--paper:#f5f6f2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:4px}a:hover{color:#0a4241}a:focus-visible{outline:3px solid #d89440;outline-offset:5px}main{max-width:1120px;padding:0 32px;margin:auto}
+.hero{position:relative;overflow:hidden;background:#142e36;color:#f5f6ef;padding:70px 56px 60px;margin:28px -8px 56px;border-radius:24px}.hero:after{content:"";position:absolute;width:390px;height:390px;right:-120px;top:-130px;border:1px solid #668780;border-radius:50%;box-shadow:0 0 0 54px #ffffff06,0 0 0 110px #ffffff04;pointer-events:none}.eyebrow{text-transform:uppercase;font-size:.72rem;letter-spacing:.23em;color:#b7d4ca;font-weight:650;margin:0 0 24px}h1{font:normal clamp(2.6rem,6vw,4.5rem)/1.05 Georgia,serif;letter-spacing:-.035em;margin:0 0 18px;max-width:720px}.affil{font-size:1.03rem;color:#bdcfce;margin:0 0 22px}.hero-summary{font:normal clamp(1.15rem,2vw,1.5rem)/1.45 Georgia,serif;max-width:570px;color:#e4ece6}.links{display:flex;gap:20px;flex-wrap:wrap;font-size:.82rem;margin-top:32px;position:relative;z-index:1}.links a{color:#d0e5dc}.links span{color:#b7cac9}.nav{display:flex;gap:25px;flex-wrap:wrap;margin:0 0 28px;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em}.nav a{text-decoration:none;color:#60716e}
+h2{font-size:.73rem;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);border-top:1px solid var(--line);padding-top:22px;margin:48px 0 24px;font-weight:700}p{max-width:790px}.pub-title{font:normal clamp(1.4rem,2.5vw,1.9rem)/1.3 Georgia,serif;margin:0 0 12px;max-width:850px}.pub-meta{font-size:.84rem;color:var(--muted);line-height:1.65}.pub-links{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 24px}.pub-links a{border:1px solid #b8ccca;padding:7px 13px;border-radius:6px;font-size:.78rem;text-decoration:none;background:#fff}.pub-links a:hover{background:#e5eeea}
+figure{margin:28px 0 48px;padding:24px;border:1px solid var(--line);border-radius:14px;background:#fff;max-width:790px}figure img{display:block;width:100%;height:auto}figcaption{font-size:.8rem;color:var(--muted);line-height:1.6;margin-top:18px}.tags{font-size:.82rem;padding:14px 18px;border-left:3px solid #d7aa67;background:#ecefe7;max-width:790px}footer{border-top:1px solid var(--line);margin:60px 0 0;padding:22px 0 40px;color:var(--muted);font-size:.75rem;max-width:850px}
+@media(max-width:600px){main{padding:0 22px}.hero{margin:14px -8px 36px;padding:42px 25px;border-radius:16px}.hero:after{opacity:.4}.links{gap:14px;font-size:.75rem}.links span{overflow-wrap:anywhere}.pub-title{font-size:1.4rem}figure{padding:12px}h2{margin-top:36px}.nav{gap:17px;font-size:.68rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.back{display:inline-block;margin:26px 0 0;font-size:.8rem;text-decoration:none}
+.hero.small{padding:52px 56px 46px}.hero.small h1{font-size:clamp(2.2rem,5vw,3.6rem)}
+.labels{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.labels span{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid #6d8f88;border-radius:99px;padding:4px 10px;color:#d0e5dc}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:8px 0 18px}
+.tile{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.tile .big{font:normal 2.3rem/1.1 Georgia,serif;color:var(--accent);margin:0 0 8px}.tile .big.warm{color:#b36b1f}.tile .big.ink{color:var(--ink)}
+.tile p{margin:0;font-size:.86rem;line-height:1.55;color:var(--muted)}
+.board{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:10px 0 30px}
+.card{background:#fff;border:1px solid var(--line);border-left:5px solid #a9b6b4;border-radius:10px;padding:14px 16px}
+.card h3{margin:0 0 4px;font-size:.95rem}.card p{margin:0;font-size:.8rem;line-height:1.5;color:var(--muted)}
+.pill{display:inline-block;font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;padding:2px 9px;margin-bottom:8px}
+.c-closed{border-left-color:#a9b6b4}.c-closed .pill{background:#e6ebea;color:#4a5b5e}
+.c-inc{border-left-color:#d89440}.c-inc .pill{background:#f7e8d3;color:#8a5312}
+.c-np{border-left-color:#b5523b}.c-np .pill{background:#f4dfd9;color:#8e3622}
+.c-keep{border-left-color:#146b69}.c-keep .pill{background:#dcebe8;color:#0f5250}
+.c-open{border-left-color:#4b6fa8}.c-open .pill{background:#dfe7f4;color:#2c4a7c}
+.plain{background:#ecefe7;border-radius:10px;padding:12px 16px;font-size:.9rem;max-width:790px}
+.plain strong{color:var(--ink)}
+figure.wide{max-width:1000px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.two figure{margin:10px 0 30px;max-width:none}
+ul.clean{max-width:790px;padding-left:20px}ul.clean li{margin:6px 0}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+@media(max-width:600px){.hero.small{padding:38px 24px}}
+</style>
+</head>
+<body>
+<main>
+<a class="back" href="../">&larr; Halil Talha Ertan</a>
+<header class="hero small" style="margin-top:14px">
+  <p class="eyebrow">Research update &middot; 3 November 2026</p>
+  <h1>LLMZIP: what we found so far</h1>
+  <p class="hero-summary">Can an AI assistant read less of its own conversation history and still answer correctly? A plain-language map of every recent test, with the numbers behind it.</p>
+  <div class="labels"><span>Exploratory</span><span>Not independently validated</span><span>Not for citation</span></div>
+</header>
+
+<nav class="nav" aria-label="Page sections"><a href="#short">Short version</a><a href="#map">Map</a><a href="#shorten">Shortening</a><a href="#heldout">Held-out test</a><a href="#errors">Errors</a><a href="#search">Search</a><a href="#speed">Speed</a><a href="#paper">12-byte paper</a><a href="#open">Open</a></nav>
+
+<h2 id="short">01 / The short version</h2>
+<p>When an assistant answers a question about an old conversation, it first <em>searches</em> its memory and then
+gives a <em>reader</em> model the pieces it found. LLMZIP asks two things: can we give the reader fewer words without
+losing correct answers, and can the search itself get better or cheaper?</p>
+<div class="tiles">
+  <div class="tile"><p class="big">~23%</p><p>fewer input tokens for the reader on successful calls when the found text was shortened, on LongMemEval-S (questions already seen, so not a clean test).</p></div>
+  <div class="tile"><p class="big warm">19.55%</p><p>saving on a fresh, held-out ConvoMem test with rules fixed in advance: just under the pre-set 20% bar, so the verdict is <strong>inconclusive</strong>.</p></div>
+  <div class="tile"><p class="big ink">0</p><p>candidates promoted. The default setup is unchanged. Search and speed ideas either missed their fixed rules or cost far too much.</p></div>
+</div>
+<p class="plain"><strong>In one sentence:</strong> trimming the context saves roughly a fifth to a quarter of the reader's input with only a small observed drop in correct answers, but this has not yet been shown on data the project has never seen, and no claim of &ldquo;no loss&rdquo; or &ldquo;equivalent&rdquo; is made.</p>
+
+<h2 id="map">02 / Map of the tested lines</h2>
+<div class="board">
+  <div class="card c-keep"><span class="pill">Kept as baseline</span><h3>Word stemming + cache</h3><p>Search slightly better; outputs unchanged while stemming ran 8.2&times; faster.</p></div>
+  <div class="card c-inc"><span class="pill">Inconclusive</span><h3>Shortened context, held-out</h3><p>ConvoMem, 500 questions: 347 vs 350 correct; saving 19.55% &lt; 20% bar.</p></div>
+  <div class="card c-closed"><span class="pill">Closed</span><h3>Shortening pilot A/B/C</h3><p>LongMemEval-S, 487 questions: 419 / 417 / 414 correct; ~23% fewer reader tokens.</p></div>
+  <div class="card c-np"><span class="pill">Not adopted</span><h3>Semantic hybrid search</h3><p>Found more evidence (337 vs 323 of 400) but used 139&ndash;234&times; the CPU; cap was 5&times;.</p></div>
+  <div class="card c-np"><span class="pill">Not adopted</span><h3>INT8 encoder</h3><p>Document CPU &minus;19.84% against a required &minus;20%.</p></div>
+  <div class="card c-np"><span class="pill">Not adopted</span><h3>FP32 graph fusion</h3><p>Document CPU &minus;6.97% (needed &minus;20%); query CPU +10.23% (allowed +10%).</p></div>
+  <div class="card c-closed"><span class="pill">Closed</span><h3>Lexical search tweak, round 2</h3><p>379 synthetic questions: 289 vs 288 with all evidence in the top 5.</p></div>
+  <div class="card c-closed"><span class="pill">Closed</span><h3>Query expansion</h3><p>250 unseen questions: 207 vs 205 correct; gain not confirmed.</p></div>
+  <div class="card c-closed"><span class="pill">Closed</span><h3>PRF &amp; single-snippet selection</h3><p>Development gains did not repeat on the locked test; snippets lowered accuracy.</p></div>
+  <div class="card c-open"><span class="pill">Open</span><h3>Does the saving carry over?</h3><p>Only testable on brand-new data, in one run with rules locked in advance.</p></div>
+</div>
+
+<h2 id="shorten">03 / Shortening what the reader sees</h2>
+<p>Three versions of the same five retrieved conversations were given to the same reader model
+on 487 LongMemEval-S questions: <strong>A</strong> the full text, <strong>B</strong> an older selector that keeps about
+75% of it, and <strong>C</strong> a newer packer that keeps whole question&ndash;answer exchanges. B and C answered
+2 and 5 fewer questions correctly than A, while the reader read about 23% fewer tokens.</p>
+<figure class=""><img src="fig/f1_lmes_abc.svg" alt="Bar charts: correct answers 419, 417, 414 of 487; reader input tokens 7.31, 5.61 and 5.57 million." loading="lazy"><figcaption>Same questions, same reader, same five retrieved sessions. Tokens count only successful final reader calls; output tokens, failed attempts, search, packaging and grading are not included, so this is not a total-cost figure. All 487 questions had been seen before and are linked into one connected group through shared sessions, so no reliable interval can be computed and no &ldquo;equivalent&rdquo; or &ldquo;better/worse&rdquo; claim follows. Arm C was added after A/B results were seen, and it differs from B in more than keeping exchanges whole.</figcaption></figure>
+<figure class=""><img src="fig/f2_token_reduction.svg" alt="Bar chart of token reduction: 23.24%, 23.80% and 19.55%, with a dashed 20% line." loading="lazy"><figcaption>Reduction in reader input tokens against the full-text arm. The 20% bar was fixed in advance only for the ConvoMem held-out test; LongMemEval-S had no such bar.</figcaption></figure>
+
+<h2 id="heldout">04 / The held-out test (ConvoMem)</h2>
+<p>To check the shortening on questions the project had never used, a single run was done on
+500 ConvoMem questions, with the pass rules written down before any model call (not entered in a public registry). The shortened arm answered
+347 correctly against 350 for the full text. No measurable drop was shown, but the token saving was 19.55%,
+just under the 20% that was required in advance, and the bar was not moved afterwards.</p>
+<figure class=""><img src="fig/f3_convomem_forest.svg" alt="Interval plot: B minus A is minus 0.6 points, interval from minus 1.27 to plus 0.25, far from the minus 3 point margin." loading="lazy"><figcaption>Difference in accuracy with a 95% cluster-bootstrap interval (77 components). ConvoMem is synthetic, LLM-generated data; it is not pooled with real-human results. One reader, one grader, one run per arm. &ldquo;No measurable drop&rdquo; does not mean equivalence.</figcaption></figure>
+<figure class=""><img src="fig/f4_convomem_by_k.svg" alt="Grouped bars: evidence lost grows from 2 to about 30 questions as the number of evidence messages rises from 1 to 5, in both arms." loading="lazy"><figcaption>When the answer needs evidence from more messages, both arms lose it more often, including the full-text arm. Most of the drop therefore comes from the search step (not all evidence reaches the top 5), and the extra loss from shortening is small. Evidence retention could not be checked for 245 of 500 questions, where the evidence message does not appear verbatim; this breakdown is descriptive.</figcaption></figure>
+
+<h2 id="errors">05 / Why shortened answers went wrong</h2>
+<p>A follow-up look at the wrong answers in the shortened arms found one main pattern: the needed fact was simply
+not in the shortened text. Most of these were questions that require collecting or counting items scattered over
+several sessions. The two arms also behaved differently when the fact was missing.</p>
+<figure class=""><img src="fig/f5_error_inspection.svg" alt="Stacked bars of wrong-answer causes for B and C, and bars showing B says I do not know while C answers confidently." loading="lazy"><figcaption>Descriptive post-hoc inspection of 12 primary and 5 control questions on LongMemEval-S. No case was found where the fact was present but the answer broke because context was cut. These patterns are written down as hypotheses, not findings; some differences may come from one-off reader variation.</figcaption></figure>
+
+<h2 id="search">06 / Can the search itself improve?</h2>
+<p>Better search does not automatically mean better answers. The biggest jump in accuracy in this programme came from
+changing the reader model, not from any search change.</p>
+<figure class=""><img src="fig/f9_reader_vs_search.svg" alt="Bar chart: older reader 55%, newer reader 82%; text notes query expansion 207 vs 205." loading="lazy"><figcaption>The reader comparison changed the model and its reasoning setting together, so the two effects cannot be separated. The negative search results apply only to the versions tested.</figcaption></figure>
+<p>A semantic hybrid (adding a small embedding model to the word-based search) did find more of the needed evidence on
+400 synthetic ConvoMem questions, but at a computing cost far above what was allowed.</p>
+<div class="two">
+<figure class=""><img src="fig/f6_semantic_hybrid.svg" alt="Bars: baseline 323 and hybrid 337 of 400; category bars." loading="lazy"><figcaption>All evidence in the top 5: +3.5 points (95% interval 0.54 to 6.43; 21 gains, 7 losses). This is a search result only: no answer-accuracy result and no real-human data.</figcaption></figure>
+<figure class=""><img src="fig/f7_semantic_cpu.svg" alt="Log-scale bars: CPU ratio 139, 173 and 234 times, against a 5 times cap." loading="lazy"><figcaption>Cold-start CPU cost relative to the baseline, by thread setting. The three groups ran different questions in different phases, so they are not a controlled speed comparison; none passes the 5&times; cap.</figcaption></figure>
+</div>
+
+<h2 id="speed">07 / Making it faster</h2>
+<p>Two engineering attempts tried to make the embedding step cheaper. Both were judged against rules fixed before
+measuring. Neither passed, and two of the three checks missed by a fraction of a percent; the rules were not rounded
+or relaxed.</p>
+<figure class=""><img src="fig/f8_engineering_gates.svg" alt="Dot plot of measured CPU change against dashed pass lines." loading="lazy"><figcaption>Measured on an invented test fixture. FP32 fusion outputs kept the same ranking on all 16 invented queries but are not byte-identical; real-data quality was not measured.</figcaption></figure>
+
+<h2 id="paper">08 / The 12-byte code paper</h2>
+<p>The earlier part of the programme asked whether a tiny 12-byte code per document could replace a standard BM25
+word index. It could not. The paper's most useful lesson is about method: five ordinary setup choices each
+flipped a verdict on their own. Figures below are from the
+<a href="https://github.com/haliltalhaertan/llmzip-paper">public paper repository</a> (CC BY 4.0).</p>
+<figure class="wide"><img src="fig/paper_fig1_reversals.png" alt="Five panels showing verdict reversals by document unit, cohort, projection, benchmark and metric." loading="lazy"><figcaption>Five configuration choices, each changed with everything else fixed: document unit, query cohort, projection family, benchmark and metric. Each one changed what counts as significant.</figcaption></figure>
+<figure class="wide"><img src="fig/paper_fig2_compact_vs_bm25.png" alt="Panels comparing compact codes with BM25." loading="lazy"><figcaption>No compact budget (12, 24 or 48 bytes) reaches BM25; only an unprojected, full-vocabulary arm, which is not compact and was found after the fact, lands above zero.</figcaption></figure>
+<figure class="wide"><img src="fig/paper_fig3_memory.png" alt="Panels on memory use and bit-identical compaction." loading="lazy"><figcaption>Memory: the codes themselves are tiny; the vocabulary is what takes memory. Two compactions remove about 63% (encoder) and 76% (BM25 index) of bytes while changing no output bit.</figcaption></figure>
+<figure class="wide"><img src="fig/paper_fig5_fusion.png" alt="Fusion of BM25 and the code against BM25." loading="lazy"><figcaption>BM25 + code fusion. The gated version failed its gate; the fixed weight 0.1 was chosen after seeing the grid and remains an unconfirmed lead.</figcaption></figure>
+
+<h2 id="open">09 / What still holds, what does not, what is open</h2>
+<p><strong>Useful</strong></p>
+<ul class="clean">
+<li>Shortening the retrieved text cuts the reader's input by roughly 20&ndash;24% in every test so far, with a small observed drop in correct answers.</li>
+<li>When answers fail after shortening, it is mostly because a fact spread across several sessions was left out &mdash; a concrete target for the next design.</li>
+<li>Two lossless compactions shrink memory use without changing any result.</li>
+</ul>
+<p><strong>Does not hold / withdrawn wording</strong></p>
+<ul class="clean">
+<li>&ldquo;No loss&rdquo;, &ldquo;equivalent&rdquo; and &ldquo;ceiling&rdquo; have been withdrawn; the tests cannot support them.</li>
+<li>Token savings are not total cost savings: output, failures, search and grading are not counted.</li>
+<li>The compact code does not beat BM25; an earlier &ldquo;+10 points&rdquo; sign-code-over-float headline was retracted.</li>
+</ul>
+<p><strong>Open</strong></p>
+<ul class="clean">
+<li>Does the ~23% saving carry over to data never seen before? This needs new data, one run, rules locked in advance.</li>
+<li>Can a shortener keep facts that are spread over several sessions?</li>
+</ul>
+
+<footer>Last updated 3 November 2026. Numbers are copied from the programme's own result files; the underlying
+research workspace is private, and question-level data, prompts and model outputs are not published. Earlier
+public snapshot: <a href="https://github.com/haliltalhaertan/llmzip-public">LLMZIP Public Research Brief</a> (16 October 2026).
+Paper: <a href="https://github.com/haliltalhaertan/llmzip-paper">llmzip-paper</a>. <a href="../">Back to homepage</a>.</footer>
+</main>
+</body>
+</html>
