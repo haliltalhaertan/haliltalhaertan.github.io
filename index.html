@@ -2,233 +2,42 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Halil Talha Ertan | Independent Researcher</title>
-<meta name="description" content="Halil Talha Ertan, independent researcher working on cellular automata, adaptive networks, artificial life, information retrieval and context selection.">
+<script src="assets/preferences-init.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" data-i18n-content="tdf3afd1d0428">
+<title data-i18n="t288ffd0161ac">Halil Talha Ertan</title>
+<meta name="description" content="Personal website of Halil Talha Ertan. Projects, questions, professional work and independent research." data-i18n-content="t6c2c03a62733">
 <link rel="canonical" href="https://haliltalhaertan.github.io/">
-<style>
-:root{--ink:#172d35;--muted:#53676c;--accent:#146b69;--line:#d9e1df;--paper:#f5f6f2}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:4px}a:hover{color:#0a4241}a:focus-visible{outline:3px solid #d89440;outline-offset:5px}main{max-width:1120px;padding:0 32px;margin:auto}
-.hero{position:relative;overflow:hidden;background:#142e36;color:#f5f6ef;padding:70px 56px 60px;margin:28px -8px 56px;border-radius:24px}.hero:after{content:"";position:absolute;width:390px;height:390px;right:-120px;top:-130px;border:1px solid #668780;border-radius:50%;box-shadow:0 0 0 54px #ffffff06,0 0 0 110px #ffffff04;pointer-events:none}.eyebrow{text-transform:uppercase;font-size:.72rem;letter-spacing:.23em;color:#b7d4ca;font-weight:650;margin:0 0 24px}h1{font:normal clamp(2.6rem,6vw,4.5rem)/1.05 Georgia,serif;letter-spacing:-.035em;margin:0 0 18px;max-width:720px}.affil{font-size:1.03rem;color:#bdcfce;margin:0 0 22px}.hero-summary{font:normal clamp(1.15rem,2vw,1.5rem)/1.45 Georgia,serif;max-width:570px;color:#e4ece6}.links{display:flex;gap:20px;flex-wrap:wrap;font-size:.82rem;margin-top:32px;position:relative;z-index:1}.links a{color:#d0e5dc}.links span{color:#b7cac9}.nav{display:flex;gap:25px;flex-wrap:wrap;margin:0 0 28px;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em}.nav a{text-decoration:none;color:#60716e}
-h2{font-size:.73rem;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);border-top:1px solid var(--line);padding-top:22px;margin:48px 0 24px;font-weight:700}p{max-width:790px}.pub-title{font:normal clamp(1.4rem,2.5vw,1.9rem)/1.3 Georgia,serif;margin:0 0 12px;max-width:850px}.pub-meta{font-size:.84rem;color:var(--muted);line-height:1.65}.pub-links{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 24px}.pub-links a{border:1px solid #b8ccca;padding:7px 13px;border-radius:6px;font-size:.78rem;text-decoration:none;background:#fff}.pub-links a:hover{background:#e5eeea}
-figure{margin:28px 0 48px;padding:24px;border:1px solid var(--line);border-radius:14px;background:#fff;max-width:790px}figure img{display:block;width:100%;height:auto}figcaption{font-size:.8rem;color:var(--muted);line-height:1.6;margin-top:18px}.tags{font-size:.82rem;padding:14px 18px;border-left:3px solid #d7aa67;background:#ecefe7;max-width:790px}footer{border-top:1px solid var(--line);margin:60px 0 0;padding:22px 0 40px;color:var(--muted);font-size:.75rem;max-width:850px}
-.fig-pair{display:grid;grid-template-columns:1fr;gap:0;max-width:790px}.fig-note{font-size:.8rem;color:var(--muted);max-width:790px}.status{display:inline-block;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:5px;background:#f3e6cf;color:#7a5418;margin-left:6px;vertical-align:middle}
-@media(max-width:600px){main{padding:0 22px}.hero{margin:14px -8px 36px;padding:42px 25px;border-radius:16px}.hero:after{opacity:.4}.links{gap:14px;font-size:.75rem}.links span{overflow-wrap:anywhere}.pub-title{font-size:1.4rem}figure{padding:12px}h2{margin-top:36px}.nav{gap:17px;font-size:.68rem}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-
-.project-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:26px 0 40px;max-width:950px}.project-nav a{padding:18px 20px;border:1px solid var(--line);background:#fff;border-radius:10px;text-decoration:none}.project-nav strong{display:block;font:1.45rem Georgia,serif;color:var(--ink)}.project-nav span{display:block;margin-top:5px;font-size:.77rem;color:var(--muted)}.research-project{border-top:1px solid var(--line);padding-top:28px;margin-top:48px;scroll-margin-top:24px}.research-project h3{font:normal 2.3rem Georgia,serif;margin:0 0 22px;color:var(--accent)}.research-project>.pub-title{margin-top:0!important}.research-archive{max-width:850px;margin:20px 0;border:1px solid var(--line);border-radius:10px;background:#fff}.research-archive summary{cursor:pointer;padding:17px 20px;font-size:.88rem;font-weight:600;color:var(--accent)}.research-archive summary:focus-visible{outline:3px solid #d89440;outline-offset:3px}.archive-content{padding:8px 20px 20px}.archive-content>.pub-title:first-child{margin-top:0!important}.archive-content figure{margin-bottom:24px}.anchor-alias{display:block;scroll-margin-top:24px}@media(max-width:600px){.project-nav{grid-template-columns:1fr;gap:10px}.project-nav a{padding:14px 18px}.project-nav strong{font-size:1.3rem}.research-project h3{font-size:1.9rem}.archive-content{padding:4px 14px 16px}.research-archive summary{padding:15px}.research-project{margin-top:36px}}
-</style>
+<meta name="theme-color" content="#142e36">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Halil Talha Ertan" data-i18n-content="t288ffd0161ac">
+<meta property="og:description" content="Personal website of Halil Talha Ertan. Projects, questions, professional work and independent research." data-i18n-content="t6c2c03a62733">
+<meta property="og:url" content="https://haliltalhaertan.github.io/">
+<link rel="stylesheet" href="assets/site.css">
 <meta name="google-site-verification" content="9iA1u3zQxZ7jNj5uxIeOD-jphZN9gBbftM0Y5cydQx4" />
+
+<link rel="stylesheet" href="assets/preferences.css">
+<script src="assets/translations.js" defer></script>
+<script src="assets/preferences.js" defer></script>
 </head>
 <body>
-<main>
-  <header class="hero">
-  <p class="eyebrow">Independent research · Istanbul</p>
-  <h1>Halil Talha Ertan</h1>
-  <p class="affil">Memory, networks &amp; efficient AI systems</p>
-  <p class="hero-summary">Exploring what simple systems can remember, and what practical systems can do with less.</p>
-  <div class="links">
-    <a href="https://github.com/haliltalhaertan">GitHub</a>
-    <!-- <a href="https://scholar.google.com/citations?user=XXXX">Google Scholar</a> -->
-    <!-- <a href="https://orcid.org/0000-0000-0000-0000">ORCID</a> -->
-    <span>haliltalhaertan [at] gmail [dot] com</span>
-  </div>
-
-  </header>
-  <nav class="nav" aria-label="Page sections"><a href="#about">About</a><a href="#papers">Research</a><a href="#contributions">Contributions</a></nav>
-  <h2 id="about">01 / About</h2>
-  <p>I am interested in memory: how it can arise on its own in simple dynamical systems,
-  and how it can be stored and searched cheaply in practical ones. One line of work studies network
-  automata whose connections are shaped by the dynamics: particles form and break bonds, a Boolean
-  rule runs on the resulting graph, and the question is what such systems can store. Another line
-  measures compact memory retrieval for conversational agents against standard baselines such as BM25.
-  I prefer exact or exhaustively checked results, negative results reported as such,
-  and fully reproducible code.</p>
-  <p class="tags"><strong>Interests:</strong> cellular automata, adaptive networks, complex systems, artificial life, information retrieval.</p>
-
-
-  <h2 id="papers">02 / Research projects</h2>
-  <span id="updates" class="anchor-alias" aria-hidden="true"></span>
-  <nav class="project-nav" aria-label="Research projects">
-    <a href="#autogenesis"><strong>Autogenesis</strong><span>Networks &amp; memory</span></a>
-    <a href="#llmzip"><strong>LLMZIP</strong><span>Retrieval &amp; context</span></a>
-    <a href="#zipgenesis"><strong>ZipGenesis</strong><span>Seeds &amp; compression</span></a>
-  </nav>
-  <section class="research-project" id="autogenesis" aria-labelledby="autogenesis-heading">
-    <h3 id="autogenesis-heading">Autogenesis</h3>
-      <p class="pub-title" id="autogenesis-2026-11">Autogenesis: small networks that repair themselves <span class="status">Work in progress</span></p>
-  <p class="pub-meta">20 October &ndash; 3 November 2026 &middot; Exploratory results, hand proofs plus one independent simulation; not peer-reviewed</p>
-  <p>After the U0 study, the project first looked for switches that the bond energy itself would hold
-  (an &ldquo;energy-reading&rdquo; universe, U1). Those searches came out mostly negative. The work then
-  turned to a different question: can a small network of on/off nodes store a pattern and put it back by
-  itself when a few nodes are flipped by mistake? The node rule is the same as in U0, but these networks are
-  designed by hand on a modified bond protocol, not grown by U0&rsquo;s physics.</p>
-  <figure>
-    <img src="img/autogenesis/autogenesis_timeline.svg" alt="Timeline of the autogenesis research from September to November 2026" loading="lazy">
-    <figcaption><strong>What happened when.</strong> Grey points mark mostly negative or inconclusive phases; the amber point is the independent re-check described below.</figcaption>
-  </figure>
-
-  <p>The clearest design, <strong>FAST40</strong>, has 40 nodes and 120 bonds, and every node has six
-  neighbours. It stores two patterns. A written hand proof claims that if any three nodes are flipped,
-  the network returns to the stored pattern within four steps, without changing a single bond.
-  A related 65-node design (FAST65) is claimed to do it in three steps; a further hand proof says that, within
-  that family of designs, three-step repair needs at least 65 nodes.</p>
-  <figure>
-    <img src="img/autogenesis/fast40_network.svg" alt="The FAST40 network: four rings of nodes X, Y, Z and W" loading="lazy">
-    <figcaption><strong>The FAST40 network</strong> in its stored pattern &ldquo;X+Z&rdquo;. Filled nodes are on. A node turns on in the next step exactly when one to three of its six neighbours are on.</figcaption>
-  </figure>
-
-  <figure>
-    <img src="img/autogenesis/fast40_repair.svg" alt="Five snapshots of FAST40 repairing three flipped nodes" loading="lazy">
-    <figcaption><strong>Self-repair, step by step.</strong> Three Y nodes are switched on by mistake (red rings). The error first spreads to five nodes, then shrinks, and the stored pattern is back after four steps. This is the slowest kind of three-node error; it matches the hand proof step for step.</figcaption>
-  </figure>
-
-  <p><strong>Independent re-check (3 November 2026).</strong> FAST40 had so far been checked only on paper.
-  A separate program, written from the published definition alone, simulated it, including the bond-deletion counters, and tried
-  <em>every</em> way of flipping one, two, three or four nodes for both stored patterns.
-  All 21,400 cases with up to three flips were repaired within four steps, and no bond ever broke.
-  With four flips, 99.4% of 182,780 cases were still repaired within four steps, but 240 were never repaired,
-  so the guarantee really stops at three.</p>
-  <figure>
-    <img src="img/autogenesis/fast40_recovery.svg" alt="Bar chart of FAST40 repair times for one to four flipped nodes" loading="lazy">
-    <figcaption><strong>Every case, counted.</strong> Each bar is split by how many steps the repair took. Bars for one to three flips contain no amber or red at all.</figcaption>
-  </figure>
-
-  <p class="pub-meta">Limits: these are hand-designed networks on a modified bond protocol, not structures that
-  U0&rsquo;s physics forms on its own; during repair the bonds never change, so the node rule does all the work.
-  The FAST65 and lower-bound proofs have not been re-checked by computer. Related ideas exist in work on
-  fault-tolerant networks, error-correcting codes and associative memory, and a proper novelty check is still to be done.
-  The original U0 manuscript is not affected by these results.</p>
-
-
-    <details class="research-archive"><summary>Original U0 study · manuscript, code and figures</summary><div class="archive-content">
-        <p class="pub-title">Memory without mechanics: exact analysis of a particle-network automaton with rule-driven bonds</p>
-  <p class="pub-meta">H. T. Ertan &middot; Autogenesis U0 &middot; Manuscript, 2026 &middot; not yet peer-reviewed</p>
-  <div class="pub-links">
-    <!-- <a href="https://arxiv.org/abs/XXXX.XXXXX">arXiv</a> -->
-    <!-- <a href="https://arxiv.org/pdf/XXXX.XXXXX">PDF</a> -->
-    <a href="https://github.com/haliltalhaertan/autogenesis-u0">Code &amp; reproduction</a>
-    <a href="https://github.com/haliltalhaertan/autogenesis-u0/blob/main/paper_repro/claims_ledger.csv">Claims ledger</a>
-  </div>
-  <p>Autogenesis U0 couples damped particles in 3D, distance-based bonds with hysteresis,
-  and a Boolean rule on the bond graph. On rest scaffolds, the particle positions stay fixed
-  while the bonds and node states can continue to change. The reported exhaustive search covers
-  491 connected graph classes: all graphs with three to six nodes, and seven-node graphs with at most
-  ten candidate edges. Exactly one class supports the specified clocked two-bit register,
-  with seven nodes and ten candidate bonds.</p>
-  <p>The register has an explicit physical realization, but remains fragile under single-node
-  and bond flips. The tested matched-null comparisons do not establish an advantage beyond the
-  graph properties controlled for. These results concern the specified model settings and search
-  family; they do not establish robust memory or spontaneous self-assembly of the register.</p>
-  <p class="pub-meta">The public repository includes the reference engine, equivalence and invariance
-  checks, reproduction scripts, and a claim-by-claim ledger. See the README for pinned versions
-  and reproducibility caveats.</p>
-  <figure>
-    <img src="register.png" alt="The minimal two-bit register: seven nodes, ten candidate bonds.">
-    <figcaption>The minimal two-bit register (n = 7, E = 10). Each of the four stored values (x, y) is a period-2 cycle; all states share the same particle positions and differ only in which bonds exist and which nodes are active.</figcaption>
-  </figure>
-
-  <figure>
-    <img src="img/autogenesis/fig1_model.png" alt="Model rules of Autogenesis U0" loading="lazy">
-    <figcaption><strong>How U0 works.</strong> (a) Bonds form, stay or break by distance, with hysteresis. (b) A node is active when 1/6 to 1/2 of its bonded neighbours are active. (c) The order of operations in one update.</figcaption>
-  </figure>
-  <figure>
-    <img src="img/autogenesis/fig2_trajectories.png" alt="Typical and rest-object trajectories" loading="lazy">
-    <figcaption><strong>What runs look like.</strong> (a) Most random starts die out within a few steps. (b) A rare survivor: bonds and active nodes alternate with period two. (c) Its particle positions stop moving exactly, from step 3,607 on.</figcaption>
-  </figure>
-  <figure>
-    <img src="img/autogenesis/fig4_census.png" alt="Exhaustive census of small graphs" loading="lazy">
-    <figcaption><strong>The exhaustive search.</strong> (a) No stable object appears without at least two triangles in the graph. (b) Among 491 connected graph classes, exactly one carries the two-bit register.</figcaption>
-  </figure>
-  <figure>
-    <img src="img/autogenesis/fig5_negative.png" alt="Negative result on built graphs" loading="lazy">
-    <figcaption><strong>An honest negative result.</strong> (a) Graphs built by the physics are no better than randomly rewired graphs with the same size and triangle count (98 above, 97 below the diagonal). (b) At rest, every bond set has exactly the same energy, so the mechanics cannot prefer one memory state over another.</figcaption>
-  </figure>
-
-
-    </div></details>
-  </section>
-  <section class="research-project" id="llmzip" aria-labelledby="llmzip-heading">
-    <h3 id="llmzip-heading">LLMZIP</h3>
-      <p class="pub-title" id="llmzip-2026-11" style="margin-top:36px"><a href="llmzip/">LLMZIP: what we found so far</a></p>
-  <p class="pub-meta">3 November 2026 &middot; Illustrated findings page &middot; Exploratory, not independently validated</p>
-  <p>A plain-language, figure-rich map of every recent LLMZIP test: shortening the context an AI reader sees
-  (about 23% fewer reader input tokens on already-seen LongMemEval-S questions), a held-out ConvoMem test that came out
-  inconclusive (19.55% saving against a pre-set 20% bar; 347 vs 350 correct of 500), why shortened answers fail,
-  and search and speed attempts that were not adopted.</p>
-  <div class="pub-links"><a href="llmzip/">Read the findings page</a></div>
-  <figure>
-    <a href="llmzip/"><img src="llmzip/fig/f2_token_reduction.svg" alt="Reader input-token reduction: 23.24%, 23.80% and 19.55% against a 20% bar."></a>
-    <figcaption>Reader input-token reduction of successful calls against full text. Not a total-cost figure. More figures on the <a href="llmzip/">findings page</a>.</figcaption>
-  </figure>
-
-
-    <details class="research-archive"><summary>Earlier manuscript · Twelve Bytes Against an Inverted Index</summary><div class="archive-content">
-        <p class="pub-title" style="margin-top:36px">Twelve Bytes Against an Inverted Index: What a Compact-Code Memory Retrieval Programme Found, and Which Configuration Choices Decided It</p>
-  <p class="pub-meta">H. T. Ertan &middot; Manuscript, 2026</p>
-  <div class="pub-links">
-    <a href="https://github.com/haliltalhaertan/llmzip-paper">Paper, data ledger &amp; code</a>
-    <a href="llmzip/">Current findings (illustrated)</a>
-  </div>
-  <p>Can a 12-byte code per document replace or complement a BM25 index when an agent searches its
-  conversational memory? In the reported four-benchmark exploratory programme, it did not beat BM25 on any measured axis.
-  Five configuration choices (document unit, query cohort, projection family, benchmark and metric)
-  each reversed a verdict with everything else fixed. Two lossless compactions leave every output bit
-  unchanged while cutting the encoder vocabulary by about 63% and the BM25 index by about 76%.</p>
-
-  <p class="pub-meta">Local exploratory pilot; not preregistered or for citation. The programme's code has not been independently audited.</p>
-
-
-    </div></details>
-    <details class="research-archive"><summary>Earlier public research brief · 16 October 2026</summary><div class="archive-content">
-        <p class="pub-title" style="margin-top:36px"><a href="https://github.com/haliltalhaertan/llmzip-public">LLMZIP Public Research Brief</a></p>
-
-  <p class="pub-meta">16 October 2026 &middot; Documentation-only exploratory research snapshot</p>
-  <p>A context-selection research brief with aggregate findings, methodological limitations,
-  and a proposed independent evaluation. Independent validation has not yet been carried out.</p>
-
-  <p>The published pilot reports 419 correct answers with full retrieved sessions and 417 with
-  an older anchored selector, across 487 previously seen questions. Successful final reader calls
-  used 23.2% fewer input tokens with the selector. These figures do not establish equivalent accuracy,
-  generalization or end-to-end cost savings: there was no clean holdout, the questions form one
-  session-connected component, and failed calls, output tokens and evaluation costs are excluded.</p>
-  <p class="pub-meta">This is the 16 October public snapshot, not a new experiment.
-  It does not validate the newer full-exchange packer or untested router variants.
-  <a href="https://github.com/haliltalhaertan/llmzip-public/blob/main/docs/PROPOSED_EVALUATION.md">Proposed independent evaluation</a>.</p>
-
-
-    </div></details>
-  </section>
-  <section class="research-project" id="zipgenesis" aria-labelledby="zipgenesis-heading">
-    <h3 id="zipgenesis-heading">ZipGenesis</h3>
-      <p class="pub-title" id="zipgenesis-2026-11" style="margin-top:36px"><a href="zipgenesis/">ZipGenesis: can a tiny seed grow back into a file?</a></p>
-  <p class="pub-meta">3 November 2026 &middot; Work in progress &middot; Ongoing research log</p>
-  <p>ZipGenesis tested whether a short seed, grown by a fixed cellular rule, can stand in for a file.
-  In every test so far it lost to ordinary compression. The study then moved to careful tests of known table-compression
-  techniques, which gave a small gain on one real data set that mostly did not carry over to a second. The latest run is recorded as failed.</p>
-  <figure>
-    <div style="overflow-x:auto"><img src="zipgenesis/img/f4-cellular-vs-zip.svg" width="800" height="378" loading="lazy" style="min-width:620px" alt="Bar chart: cellular prediction totals 14,297 bytes versus 6,911 for ordinary compressors on 20 files."></div>
-    <figcaption>One of twelve figures on the findings page: on 20 practice files, the cellular approach was the largest option and was never chosen.</figcaption>
-  </figure>
-  <div class="pub-links">
-    <a href="zipgenesis/">Findings and figures</a>
-  </div>
-
-
-  </section>
-  <h2 id="contributions">03 / Public contributions</h2>
-  <p class="pub-title">JoLT: byte-budget feasibility in discrete allocation</p>
-  <p class="pub-meta">1 November 2026 &middot; Public upstream correction</p>
-  <p>The JoLT repository published a correction to its rank and joint rank/bit allocators:
-  the bisection now retains a budget-feasible iterate and raises an error when the minimum allocation
-  cannot fit. The commit credits Halil Talha Ertan as the reporter. This is a source-level correction
-  and public contribution record; it does not establish revised benchmark results or paper authorship.</p>
-  <div class="pub-links">
-    <a href="https://github.com/rahulk98/JoLT-Master-Thesis/commit/11ab4a152aee9b338a6b79f93ebe794798d254b0">Upstream correction &amp; reporter credit</a>
-  </div>
-
-  <footer>Last updated 3 November 2026. Summaries reflect the linked public sources;
-  exploratory observations are distinguished from independent validation.</footer>
+<div class="site-shell"><a class="skip-link" href="#main-content" data-i18n="t0a4470d64e9d">Skip to content</a>
+<div class="site-bar"><a class="wordmark" href="./" aria-label="Halil Talha Ertan, home" data-i18n-aria-label="t88a4f5eae7a2" data-i18n="t7994fc02be80">HTE<span>Halil Talha Ertan</span></a>
+<nav class="site-nav" aria-label="Main navigation" data-i18n-aria-label="tefd197f3fce4">
+<a href="./" aria-current="page" data-i18n="t70f8bb9a8a53">Home</a><a href="work/" data-i18n="t00040bab8a78">Work</a><a href="researchs/" data-i18n="tbe601df25eea">Research</a>
+</nav><div class="site-preferences"><div class="preference-control"><button type="button" class="preference-icon" id="language-toggle" aria-label="Language" title="Language" aria-haspopup="menu" aria-expanded="false" aria-controls="language-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4 6 4 9s-1 6-4 9c-3-3-4-6-4-9s1-6 4-9Z"/></svg></button><div class="preferences-panel" id="language-panel" role="menu" aria-label="Language" hidden><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="en" lang="en"><span>English</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="de" lang="de"><span>Deutsch</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="tr" lang="tr"><span>Türkçe</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="zh" lang="zh"><span>简体中文</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="ru" lang="ru"><span>Русский</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="ja" lang="ja"><span>日本語</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="ko" lang="ko"><span>한국어</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="es" lang="es"><span>Español</span><span class="choice-check" aria-hidden="true">✓</span></button></div></div><div class="preference-control"><button type="button" class="preference-icon" id="theme-toggle" aria-label="Appearance" title="Appearance" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-panel"><svg viewBox="0 0 24 24" aria-hidden="true" data-theme-icon="system"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" data-theme-icon="light" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" data-theme-icon="dark" hidden><path d="M20.8 13.5A9 9 0 0 1 10.5 3.2 9 9 0 1 0 20.8 13.5Z"/></svg></button><div class="preferences-panel theme-panel" id="theme-panel" role="menu" aria-label="Appearance" hidden><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-theme="system"><svg viewBox="0 0 24 24" aria-hidden="true" ><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span data-ui="system">System</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-theme="light"><svg viewBox="0 0 24 24" aria-hidden="true" ><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><span data-ui="light">Light</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-theme="dark"><svg viewBox="0 0 24 24" aria-hidden="true" ><path d="M20.8 13.5A9 9 0 0 1 10.5 3.2 9 9 0 1 0 20.8 13.5Z"/></svg><span data-ui="dark">Dark</span><span class="choice-check" aria-hidden="true">✓</span></button></div></div></div></div></div>
+<main id="main-content" tabindex="-1">
+<header class="home-intro" id="about">
+<p class="eyebrow" data-i18n="t1235dad60220">Personal website</p>
+<h1 data-i18n="t288ffd0161ac">Halil Talha Ertan</h1>
+<p class="home-lead" data-i18n="t34b447c5942e">Projects, questions and things I&rsquo;m exploring.</p>
+</header>
+<nav class="home-routes" aria-label="Explore the site" data-i18n-aria-label="t9f194d76fe9c">
+<a class="home-route" href="work/" data-i18n="t34080214956b"><h2>Work <span aria-hidden="true">&rarr;</span></h2><p>Projects and professional work.</p></a>
+<a class="home-route" href="researchs/" data-i18n="tad4e862408d0"><h2>Research <span aria-hidden="true">&rarr;</span></h2><p>Experiments, findings and open questions.</p></a>
+</nav>
+<footer class="site-footer"><span>Halil Talha Ertan <span aria-hidden="true">·</span> Istanbul</span><nav aria-label="Footer navigation" data-i18n-aria-label="ta32d98c0efff"><a href="work/" data-i18n="t00040bab8a78">Work</a><a href="researchs/" data-i18n="tbe601df25eea">Research</a><a href="https://github.com/haliltalhaertan" data-i18n="t5442e2b64fa0">GitHub</a><a href="https://www.linkedin.com/in/haliltalhaertan/" rel="me" data-i18n="t6b6390a44161">LinkedIn</a></nav><span class="updated" data-i18n="t4507c18fc95c">Updated 3 November 2026</span></footer>
 </main>
+<script src="assets/offline-preview.js" defer></script>
+<script src="assets/legacy-links.js" defer></script>
 </body>
 </html>

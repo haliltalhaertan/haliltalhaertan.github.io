@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LLMZIP: current findings | Halil Talha Ertan</title>
-<meta name="description" content="Current findings of the LLMZIP programme on shortening and searching conversational memory for language-model agents: what held, what did not, and what is still open.">
+<script src="../assets/preferences-init.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" data-i18n-content="tdf3afd1d0428">
+<title data-i18n="t39b94bc5cd93">LLMZIP: current findings | Halil Talha Ertan</title>
+<meta name="description" content="Current findings of the LLMZIP programme on shortening and searching conversational memory for language-model agents: what held, what did not, and what is still open." data-i18n-content="t760a55eb37ea">
 <link rel="canonical" href="https://haliltalhaertan.github.io/llmzip/">
 <style>
 :root{--ink:#172d35;--muted:#53676c;--accent:#146b69;--line:#d9e1df;--paper:#f5f6f2}
@@ -39,116 +40,127 @@ ul.clean{max-width:790px;padding-left:20px}ul.clean li{margin:6px 0}
 @media(max-width:820px){.two{grid-template-columns:1fr}}
 @media(max-width:600px){.hero.small{padding:38px 24px}}
 </style>
+<link rel="stylesheet" href="../assets/project-navigation.css">
+<link rel="stylesheet" href="../assets/preferences.css">
+<script src="../assets/translations.js" defer></script>
+<script src="../assets/preferences.js" defer></script>
 </head>
 <body>
-<main>
-<a class="back" href="../">&larr; Halil Talha Ertan</a>
+<div class="site-shell"><a class="skip-link" href="#main-content" data-i18n="t0a4470d64e9d">Skip to content</a>
+<div class="site-bar"><a class="wordmark" href="../" aria-label="Halil Talha Ertan, home" data-i18n-aria-label="t88a4f5eae7a2" data-i18n="t7994fc02be80">HTE<span>Halil Talha Ertan</span></a>
+<nav class="site-nav" aria-label="Main navigation" data-i18n-aria-label="tefd197f3fce4">
+<a href="../" data-i18n="t70f8bb9a8a53">Home</a><a href="../work/" data-i18n="t00040bab8a78">Work</a><a href="../researchs/" aria-current="page" data-i18n="tbe601df25eea">Research</a>
+</nav><div class="site-preferences"><div class="preference-control"><button type="button" class="preference-icon" id="language-toggle" aria-label="Language" title="Language" aria-haspopup="menu" aria-expanded="false" aria-controls="language-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4 6 4 9s-1 6-4 9c-3-3-4-6-4-9s1-6 4-9Z"/></svg></button><div class="preferences-panel" id="language-panel" role="menu" aria-label="Language" hidden><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="en" lang="en"><span>English</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="de" lang="de"><span>Deutsch</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="tr" lang="tr"><span>Türkçe</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="zh" lang="zh"><span>简体中文</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="ru" lang="ru"><span>Русский</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="ja" lang="ja"><span>日本語</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="ko" lang="ko"><span>한국어</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="es" lang="es"><span>Español</span><span class="choice-check" aria-hidden="true">✓</span></button></div></div><div class="preference-control"><button type="button" class="preference-icon" id="theme-toggle" aria-label="Appearance" title="Appearance" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-panel"><svg viewBox="0 0 24 24" aria-hidden="true" data-theme-icon="system"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" data-theme-icon="light" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" data-theme-icon="dark" hidden><path d="M20.8 13.5A9 9 0 0 1 10.5 3.2 9 9 0 1 0 20.8 13.5Z"/></svg></button><div class="preferences-panel theme-panel" id="theme-panel" role="menu" aria-label="Appearance" hidden><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-theme="system"><svg viewBox="0 0 24 24" aria-hidden="true" ><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span data-ui="system">System</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-theme="light"><svg viewBox="0 0 24 24" aria-hidden="true" ><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><span data-ui="light">Light</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-theme="dark"><svg viewBox="0 0 24 24" aria-hidden="true" ><path d="M20.8 13.5A9 9 0 0 1 10.5 3.2 9 9 0 1 0 20.8 13.5Z"/></svg><span data-ui="dark">Dark</span><span class="choice-check" aria-hidden="true">✓</span></button></div></div></div></div></div>
+<main id="main-content" tabindex="-1">
+<a class="back" href="../researchs/#llmzip" data-i18n="te3d7f2ba4f20">&larr; Research projects</a>
 <header class="hero small" style="margin-top:14px">
-  <p class="eyebrow">Research update &middot; 3 November 2026</p>
-  <h1>LLMZIP: what we found so far</h1>
-  <p class="hero-summary">Can an AI assistant read less of its own conversation history and still answer correctly? A plain-language map of every recent test, with the numbers behind it.</p>
-  <div class="labels"><span>Exploratory</span><span>Not independently validated</span><span>Not for citation</span></div>
+  <p class="eyebrow" data-i18n="t2ef11e614800">Research update &middot; 3 November 2026</p>
+  <h1 data-i18n="ta157fa2c42bc">LLMZIP: what we found so far</h1>
+  <p class="hero-summary" data-i18n="t8060ec0e5125">Can an AI assistant read less of its own conversation history and still answer correctly? A plain-language map of every recent test, with the numbers behind it.</p>
+  <div class="labels"><span data-i18n="tf596c36346b0">Exploratory</span><span data-i18n="tc051657d9058">Not independently validated</span><span data-i18n="t0699a2eca697">Not for citation</span></div>
 </header>
 
-<nav class="nav" aria-label="Page sections"><a href="#short">Short version</a><a href="#map">Map</a><a href="#shorten">Shortening</a><a href="#heldout">Held-out test</a><a href="#errors">Errors</a><a href="#search">Search</a><a href="#speed">Speed</a><a href="#paper">12-byte paper</a><a href="#open">Open</a></nav>
+<nav class="nav" aria-label="Page sections" data-i18n-aria-label="t630cb51eecc0"><a href="#short" data-i18n="tee36904fe220">Short version</a><a href="#map" data-i18n="tab478f3efc84">Map</a><a href="#shorten" data-i18n="t85a611c0fb73">Shortening</a><a href="#heldout" data-i18n="t916fb93d80c4">Held-out test</a><a href="#errors" data-i18n="t805e86a8cbf6">Errors</a><a href="#search" data-i18n="tbce06414177f">Search</a><a href="#speed" data-i18n="t2d2cb022bc3d">Speed</a><a href="#paper" data-i18n="t37d0c178a480">12-byte paper</a><a href="#open" data-i18n="tcf9b77061f7b">Open</a></nav>
 
-<h2 id="short">01 / The short version</h2>
-<p>When an assistant answers a question about an old conversation, it first <em>searches</em> its memory and then
+<h2 id="short" data-i18n="te1b467920a41">01 / The short version</h2>
+<p data-i18n="t0e1195e22d30">When an assistant answers a question about an old conversation, it first <em>searches</em> its memory and then
 gives a <em>reader</em> model the pieces it found. LLMZIP asks two things: can we give the reader fewer words without
 losing correct answers, and can the search itself get better or cheaper?</p>
 <div class="tiles">
-  <div class="tile"><p class="big">~23%</p><p>fewer input tokens for the reader on successful calls when the found text was shortened, on LongMemEval-S (questions already seen, so not a clean test).</p></div>
-  <div class="tile"><p class="big warm">19.55%</p><p>saving on a fresh, held-out ConvoMem test with rules fixed in advance: just under the pre-set 20% bar, so the verdict is <strong>inconclusive</strong>.</p></div>
-  <div class="tile"><p class="big ink">0</p><p>candidates promoted. The default setup is unchanged. Search and speed ideas either missed their fixed rules or cost far too much.</p></div>
+  <div class="tile"><p class="big">~23%</p><p data-i18n="t0574a91c286e">fewer input tokens for the reader on successful calls when the found text was shortened, on LongMemEval-S (questions already seen, so not a clean test).</p></div>
+  <div class="tile"><p class="big warm">19.55%</p><p data-i18n="t5dd169c8c968">saving on a fresh, held-out ConvoMem test with rules fixed in advance: just under the pre-set 20% bar, so the verdict is <strong>inconclusive</strong>.</p></div>
+  <div class="tile"><p class="big ink">0</p><p data-i18n="t173166e0c936">candidates promoted. The default setup is unchanged. Search and speed ideas either missed their fixed rules or cost far too much.</p></div>
 </div>
-<p class="plain"><strong>In one sentence:</strong> trimming the context saves roughly a fifth to a quarter of the reader's input with only a small observed drop in correct answers, but this has not yet been shown on data the project has never seen, and no claim of &ldquo;no loss&rdquo; or &ldquo;equivalent&rdquo; is made.</p>
+<p class="plain" data-i18n="t63e1dfd89dd9"><strong>In one sentence:</strong> trimming the context saves roughly a fifth to a quarter of the reader's input with only a small observed drop in correct answers, but this has not yet been shown on data the project has never seen, and no claim of &ldquo;no loss&rdquo; or &ldquo;equivalent&rdquo; is made.</p>
 
-<h2 id="map">02 / Map of the tested lines</h2>
+<h2 id="map" data-i18n="t5700ee73c7ef">02 / Map of the tested lines</h2>
 <div class="board">
-  <div class="card c-keep"><span class="pill">Kept as baseline</span><h3>Word stemming + cache</h3><p>Search slightly better; outputs unchanged while stemming ran 8.2&times; faster.</p></div>
-  <div class="card c-inc"><span class="pill">Inconclusive</span><h3>Shortened context, held-out</h3><p>ConvoMem, 500 questions: 347 vs 350 correct; saving 19.55% &lt; 20% bar.</p></div>
-  <div class="card c-closed"><span class="pill">Closed</span><h3>Shortening pilot A/B/C</h3><p>LongMemEval-S, 487 questions: 419 / 417 / 414 correct; ~23% fewer reader tokens.</p></div>
-  <div class="card c-np"><span class="pill">Not adopted</span><h3>Semantic hybrid search</h3><p>Found more evidence (337 vs 323 of 400) but used 139&ndash;234&times; the CPU; cap was 5&times;.</p></div>
-  <div class="card c-np"><span class="pill">Not adopted</span><h3>INT8 encoder</h3><p>Document CPU &minus;19.84% against a required &minus;20%.</p></div>
-  <div class="card c-np"><span class="pill">Not adopted</span><h3>FP32 graph fusion</h3><p>Document CPU &minus;6.97% (needed &minus;20%); query CPU +10.23% (allowed +10%).</p></div>
-  <div class="card c-closed"><span class="pill">Closed</span><h3>Lexical search tweak, round 2</h3><p>379 synthetic questions: 289 vs 288 with all evidence in the top 5.</p></div>
-  <div class="card c-closed"><span class="pill">Closed</span><h3>Query expansion</h3><p>250 unseen questions: 207 vs 205 correct; gain not confirmed.</p></div>
-  <div class="card c-closed"><span class="pill">Closed</span><h3>PRF &amp; single-snippet selection</h3><p>Development gains did not repeat on the locked test; snippets lowered accuracy.</p></div>
-  <div class="card c-open"><span class="pill">Open</span><h3>Does the saving carry over?</h3><p>Only testable on brand-new data, in one run with rules locked in advance.</p></div>
+  <div class="card c-keep"><span class="pill" data-i18n="t786ebd9360c6">Kept as baseline</span><h3 data-i18n="t5457b3612934">Word stemming + cache</h3><p data-i18n="td6d370541a48">Search slightly better; outputs unchanged while stemming ran 8.2&times; faster.</p></div>
+  <div class="card c-inc"><span class="pill" data-i18n="t4593dc6d8923">Inconclusive</span><h3 data-i18n="tff897e0ca408">Shortened context, held-out</h3><p data-i18n="t265a644dcf60">ConvoMem, 500 questions: 347 vs 350 correct; saving 19.55% &lt; 20% bar.</p></div>
+  <div class="card c-closed"><span class="pill" data-i18n="t88d86b7721d5">Closed</span><h3 data-i18n="tfd9b9c8515d7">Shortening pilot A/B/C</h3><p data-i18n="t5119531581a0">LongMemEval-S, 487 questions: 419 / 417 / 414 correct; ~23% fewer reader tokens.</p></div>
+  <div class="card c-np"><span class="pill" data-i18n="te33190fc8c58">Not adopted</span><h3 data-i18n="te41503223f82">Semantic hybrid search</h3><p data-i18n="tc069a6db78aa">Found more evidence (337 vs 323 of 400) but used 139&ndash;234&times; the CPU; cap was 5&times;.</p></div>
+  <div class="card c-np"><span class="pill" data-i18n="te33190fc8c58">Not adopted</span><h3 data-i18n="t0d8be2d16191">INT8 encoder</h3><p data-i18n="t920aaa24fd9f">Document CPU &minus;19.84% against a required &minus;20%.</p></div>
+  <div class="card c-np"><span class="pill" data-i18n="te33190fc8c58">Not adopted</span><h3 data-i18n="ta48ea7cfb208">FP32 graph fusion</h3><p data-i18n="t422ad2df6e0a">Document CPU &minus;6.97% (needed &minus;20%); query CPU +10.23% (allowed +10%).</p></div>
+  <div class="card c-closed"><span class="pill" data-i18n="t88d86b7721d5">Closed</span><h3 data-i18n="t415a510aeaa7">Lexical search tweak, round 2</h3><p data-i18n="tdf3be663d4fa">379 synthetic questions: 289 vs 288 with all evidence in the top 5.</p></div>
+  <div class="card c-closed"><span class="pill" data-i18n="t88d86b7721d5">Closed</span><h3 data-i18n="t85780c90b7a6">Query expansion</h3><p data-i18n="t109f29d944a4">250 unseen questions: 207 vs 205 correct; gain not confirmed.</p></div>
+  <div class="card c-closed"><span class="pill" data-i18n="t88d86b7721d5">Closed</span><h3 data-i18n="tf88fad942762">PRF &amp; single-snippet selection</h3><p data-i18n="t41cfdb1df188">Development gains did not repeat on the locked test; snippets lowered accuracy.</p></div>
+  <div class="card c-open"><span class="pill" data-i18n="tcf9b77061f7b">Open</span><h3 data-i18n="tbb96d109a0fe">Does the saving carry over?</h3><p data-i18n="t434cb9bf0d50">Only testable on brand-new data, in one run with rules locked in advance.</p></div>
 </div>
 
-<h2 id="shorten">03 / Shortening what the reader sees</h2>
-<p>Three versions of the same five retrieved conversations were given to the same reader model
+<h2 id="shorten" data-i18n="ta4bcfa4f352f">03 / Shortening what the reader sees</h2>
+<p data-i18n="t1adb7524f183">Three versions of the same five retrieved conversations were given to the same reader model
 on 487 LongMemEval-S questions: <strong>A</strong> the full text, <strong>B</strong> an older selector that keeps about
 75% of it, and <strong>C</strong> a newer packer that keeps whole question&ndash;answer exchanges. B and C answered
 2 and 5 fewer questions correctly than A, while the reader read about 23% fewer tokens.</p>
-<figure class=""><img src="fig/f1_lmes_abc.svg" alt="Bar charts: correct answers 419, 417, 414 of 487; reader input tokens 7.31, 5.61 and 5.57 million." loading="lazy"><figcaption>Same questions, same reader, same five retrieved sessions. Tokens count only successful final reader calls; output tokens, failed attempts, search, packaging and grading are not included, so this is not a total-cost figure. All 487 questions had been seen before and are linked into one connected group through shared sessions, so no reliable interval can be computed and no &ldquo;equivalent&rdquo; or &ldquo;better/worse&rdquo; claim follows. Arm C was added after A/B results were seen, and it differs from B in more than keeping exchanges whole.</figcaption></figure>
-<figure class=""><img src="fig/f2_token_reduction.svg" alt="Bar chart of token reduction: 23.24%, 23.80% and 19.55%, with a dashed 20% line." loading="lazy"><figcaption>Reduction in reader input tokens against the full-text arm. The 20% bar was fixed in advance only for the ConvoMem held-out test; LongMemEval-S had no such bar.</figcaption></figure>
+<figure class=""><img src="fig/f1_lmes_abc.svg" alt="Bar charts: correct answers 419, 417, 414 of 487; reader input tokens 7.31, 5.61 and 5.57 million." data-i18n-alt="t7fc39eea3e17" loading="lazy"><figcaption data-i18n="t352c1d9a7a24">Same questions, same reader, same five retrieved sessions. Tokens count only successful final reader calls; output tokens, failed attempts, search, packaging and grading are not included, so this is not a total-cost figure. All 487 questions had been seen before and are linked into one connected group through shared sessions, so no reliable interval can be computed and no &ldquo;equivalent&rdquo; or &ldquo;better/worse&rdquo; claim follows. Arm C was added after A/B results were seen, and it differs from B in more than keeping exchanges whole.</figcaption></figure>
+<figure class=""><img src="fig/f2_token_reduction.svg" alt="Bar chart of token reduction: 23.24%, 23.80% and 19.55%, with a dashed 20% line." data-i18n-alt="t6812c07f263f" loading="lazy"><figcaption data-i18n="t253494ad789b">Reduction in reader input tokens against the full-text arm. The 20% bar was fixed in advance only for the ConvoMem held-out test; LongMemEval-S had no such bar.</figcaption></figure>
 
-<h2 id="heldout">04 / The held-out test (ConvoMem)</h2>
-<p>To check the shortening on questions the project had never used, a single run was done on
+<h2 id="heldout" data-i18n="t2ec342b59f2c">04 / The held-out test (ConvoMem)</h2>
+<p data-i18n="t31d88a019a9e">To check the shortening on questions the project had never used, a single run was done on
 500 ConvoMem questions, with the pass rules written down before any model call (not entered in a public registry). The shortened arm answered
 347 correctly against 350 for the full text. No measurable drop was shown, but the token saving was 19.55%,
 just under the 20% that was required in advance, and the bar was not moved afterwards.</p>
-<figure class=""><img src="fig/f3_convomem_forest.svg" alt="Interval plot: B minus A is minus 0.6 points, interval from minus 1.27 to plus 0.25, far from the minus 3 point margin." loading="lazy"><figcaption>Difference in accuracy with a 95% cluster-bootstrap interval (77 components). ConvoMem is synthetic, LLM-generated data; it is not pooled with real-human results. One reader, one grader, one run per arm. &ldquo;No measurable drop&rdquo; does not mean equivalence.</figcaption></figure>
-<figure class=""><img src="fig/f4_convomem_by_k.svg" alt="Grouped bars: evidence lost grows from 2 to about 30 questions as the number of evidence messages rises from 1 to 5, in both arms." loading="lazy"><figcaption>When the answer needs evidence from more messages, both arms lose it more often, including the full-text arm. Most of the drop therefore comes from the search step (not all evidence reaches the top 5), and the extra loss from shortening is small. Evidence retention could not be checked for 245 of 500 questions, where the evidence message does not appear verbatim; this breakdown is descriptive.</figcaption></figure>
+<figure class=""><img src="fig/f3_convomem_forest.svg" alt="Interval plot: B minus A is minus 0.6 points, interval from minus 1.27 to plus 0.25, far from the minus 3 point margin." data-i18n-alt="t263f4c86d1ab" loading="lazy"><figcaption data-i18n="tf95d875bb862">Difference in accuracy with a 95% cluster-bootstrap interval (77 components). ConvoMem is synthetic, LLM-generated data; it is not pooled with real-human results. One reader, one grader, one run per arm. &ldquo;No measurable drop&rdquo; does not mean equivalence.</figcaption></figure>
+<figure class=""><img src="fig/f4_convomem_by_k.svg" alt="Grouped bars: evidence lost grows from 2 to about 30 questions as the number of evidence messages rises from 1 to 5, in both arms." data-i18n-alt="t7e9416dfbb1a" loading="lazy"><figcaption data-i18n="t043c648622ad">When the answer needs evidence from more messages, both arms lose it more often, including the full-text arm. Most of the drop therefore comes from the search step (not all evidence reaches the top 5), and the extra loss from shortening is small. Evidence retention could not be checked for 245 of 500 questions, where the evidence message does not appear verbatim; this breakdown is descriptive.</figcaption></figure>
 
-<h2 id="errors">05 / Why shortened answers went wrong</h2>
-<p>A follow-up look at the wrong answers in the shortened arms found one main pattern: the needed fact was simply
+<h2 id="errors" data-i18n="t62256f39aa06">05 / Why shortened answers went wrong</h2>
+<p data-i18n="te89dbbe6fe5a">A follow-up look at the wrong answers in the shortened arms found one main pattern: the needed fact was simply
 not in the shortened text. Most of these were questions that require collecting or counting items scattered over
 several sessions. The two arms also behaved differently when the fact was missing.</p>
-<figure class=""><img src="fig/f5_error_inspection.svg" alt="Stacked bars of wrong-answer causes for B and C, and bars showing B says I do not know while C answers confidently." loading="lazy"><figcaption>Descriptive post-hoc inspection of 12 primary and 5 control questions on LongMemEval-S. No case was found where the fact was present but the answer broke because context was cut. These patterns are written down as hypotheses, not findings; some differences may come from one-off reader variation.</figcaption></figure>
+<figure class=""><img src="fig/f5_error_inspection.svg" alt="Stacked bars of wrong-answer causes for B and C, and bars showing B says I do not know while C answers confidently." data-i18n-alt="t86c045614cc0" loading="lazy"><figcaption data-i18n="t4bd92f49530c">Descriptive post-hoc inspection of 12 primary and 5 control questions on LongMemEval-S. No case was found where the fact was present but the answer broke because context was cut. These patterns are written down as hypotheses, not findings; some differences may come from one-off reader variation.</figcaption></figure>
 
-<h2 id="search">06 / Can the search itself improve?</h2>
-<p>Better search does not automatically mean better answers. The biggest jump in accuracy in this programme came from
+<h2 id="search" data-i18n="tadd197e238ae">06 / Can the search itself improve?</h2>
+<p data-i18n="tac21ee012d55">Better search does not automatically mean better answers. The biggest jump in accuracy in this programme came from
 changing the reader model, not from any search change.</p>
-<figure class=""><img src="fig/f9_reader_vs_search.svg" alt="Bar chart: older reader 55%, newer reader 82%; text notes query expansion 207 vs 205." loading="lazy"><figcaption>The reader comparison changed the model and its reasoning setting together, so the two effects cannot be separated. The negative search results apply only to the versions tested.</figcaption></figure>
-<p>A semantic hybrid (adding a small embedding model to the word-based search) did find more of the needed evidence on
+<figure class=""><img src="fig/f9_reader_vs_search.svg" alt="Bar chart: older reader 55%, newer reader 82%; text notes query expansion 207 vs 205." data-i18n-alt="tc940bdb0c2c6" loading="lazy"><figcaption data-i18n="t80d4be2f9e88">The reader comparison changed the model and its reasoning setting together, so the two effects cannot be separated. The negative search results apply only to the versions tested.</figcaption></figure>
+<p data-i18n="te3f3589c2cc4">A semantic hybrid (adding a small embedding model to the word-based search) did find more of the needed evidence on
 400 synthetic ConvoMem questions, but at a computing cost far above what was allowed.</p>
 <div class="two">
-<figure class=""><img src="fig/f6_semantic_hybrid.svg" alt="Bars: baseline 323 and hybrid 337 of 400; category bars." loading="lazy"><figcaption>All evidence in the top 5: +3.5 points (95% interval 0.54 to 6.43; 21 gains, 7 losses). This is a search result only: no answer-accuracy result and no real-human data.</figcaption></figure>
-<figure class=""><img src="fig/f7_semantic_cpu.svg" alt="Log-scale bars: CPU ratio 139, 173 and 234 times, against a 5 times cap." loading="lazy"><figcaption>Cold-start CPU cost relative to the baseline, by thread setting. The three groups ran different questions in different phases, so they are not a controlled speed comparison; none passes the 5&times; cap.</figcaption></figure>
+<figure class=""><img src="fig/f6_semantic_hybrid.svg" alt="Bars: baseline 323 and hybrid 337 of 400; category bars." data-i18n-alt="t20b0e832d74d" loading="lazy"><figcaption data-i18n="t7b6273fd3142">All evidence in the top 5: +3.5 points (95% interval 0.54 to 6.43; 21 gains, 7 losses). This is a search result only: no answer-accuracy result and no real-human data.</figcaption></figure>
+<figure class=""><img src="fig/f7_semantic_cpu.svg" alt="Log-scale bars: CPU ratio 139, 173 and 234 times, against a 5 times cap." data-i18n-alt="tdd8a85e717ed" loading="lazy"><figcaption data-i18n="tdcdaa09a13c3">Cold-start CPU cost relative to the baseline, by thread setting. The three groups ran different questions in different phases, so they are not a controlled speed comparison; none passes the 5&times; cap.</figcaption></figure>
 </div>
 
-<h2 id="speed">07 / Making it faster</h2>
-<p>Two engineering attempts tried to make the embedding step cheaper. Both were judged against rules fixed before
+<h2 id="speed" data-i18n="t95cefb7efe81">07 / Making it faster</h2>
+<p data-i18n="tbde215963242">Two engineering attempts tried to make the embedding step cheaper. Both were judged against rules fixed before
 measuring. Neither passed, and two of the three checks missed by a fraction of a percent; the rules were not rounded
 or relaxed.</p>
-<figure class=""><img src="fig/f8_engineering_gates.svg" alt="Dot plot of measured CPU change against dashed pass lines." loading="lazy"><figcaption>Measured on an invented test fixture. FP32 fusion outputs kept the same ranking on all 16 invented queries but are not byte-identical; real-data quality was not measured.</figcaption></figure>
+<figure class=""><img src="fig/f8_engineering_gates.svg" alt="Dot plot of measured CPU change against dashed pass lines." data-i18n-alt="t10535c66b31e" loading="lazy"><figcaption data-i18n="t4d7999ea9e00">Measured on an invented test fixture. FP32 fusion outputs kept the same ranking on all 16 invented queries but are not byte-identical; real-data quality was not measured.</figcaption></figure>
 
-<h2 id="paper">08 / The 12-byte code paper</h2>
-<p>The earlier part of the programme asked whether a tiny 12-byte code per document could replace a standard BM25
+<h2 id="paper" data-i18n="t2d6cd01cd4c9">08 / The 12-byte code paper</h2>
+<p data-i18n="tedc7efef9779">The earlier part of the programme asked whether a tiny 12-byte code per document could replace a standard BM25
 word index. It could not. The paper's most useful lesson is about method: five ordinary setup choices each
 flipped a verdict on their own. Figures below are from the
 <a href="https://github.com/haliltalhaertan/llmzip-paper">public paper repository</a> (CC BY 4.0).</p>
-<figure class="wide"><img src="fig/paper_fig1_reversals.png" alt="Five panels showing verdict reversals by document unit, cohort, projection, benchmark and metric." loading="lazy"><figcaption>Five configuration choices, each changed with everything else fixed: document unit, query cohort, projection family, benchmark and metric. Each one changed what counts as significant.</figcaption></figure>
-<figure class="wide"><img src="fig/paper_fig2_compact_vs_bm25.png" alt="Panels comparing compact codes with BM25." loading="lazy"><figcaption>No compact budget (12, 24 or 48 bytes) reaches BM25; only an unprojected, full-vocabulary arm, which is not compact and was found after the fact, lands above zero.</figcaption></figure>
-<figure class="wide"><img src="fig/paper_fig3_memory.png" alt="Panels on memory use and bit-identical compaction." loading="lazy"><figcaption>Memory: the codes themselves are tiny; the vocabulary is what takes memory. Two compactions remove about 63% (encoder) and 76% (BM25 index) of bytes while changing no output bit.</figcaption></figure>
-<figure class="wide"><img src="fig/paper_fig5_fusion.png" alt="Fusion of BM25 and the code against BM25." loading="lazy"><figcaption>BM25 + code fusion. The gated version failed its gate; the fixed weight 0.1 was chosen after seeing the grid and remains an unconfirmed lead.</figcaption></figure>
+<figure class="wide"><img src="fig/paper_fig1_reversals.png" alt="Five panels showing verdict reversals by document unit, cohort, projection, benchmark and metric." data-i18n-alt="td29af10bb386" loading="lazy"><figcaption data-i18n="t14003e43d48f">Five configuration choices, each changed with everything else fixed: document unit, query cohort, projection family, benchmark and metric. Each one changed what counts as significant.</figcaption></figure>
+<figure class="wide"><img src="fig/paper_fig2_compact_vs_bm25.png" alt="Panels comparing compact codes with BM25." data-i18n-alt="t1d6206add4f1" loading="lazy"><figcaption data-i18n="t7070d56a274a">No compact budget (12, 24 or 48 bytes) reaches BM25; only an unprojected, full-vocabulary arm, which is not compact and was found after the fact, lands above zero.</figcaption></figure>
+<figure class="wide"><img src="fig/paper_fig3_memory.png" alt="Panels on memory use and bit-identical compaction." data-i18n-alt="t9952c3d6218e" loading="lazy"><figcaption data-i18n="t309fa21669cf">Memory: the codes themselves are tiny; the vocabulary is what takes memory. Two compactions remove about 63% (encoder) and 76% (BM25 index) of bytes while changing no output bit.</figcaption></figure>
+<figure class="wide"><img src="fig/paper_fig5_fusion.png" alt="Fusion of BM25 and the code against BM25." data-i18n-alt="t8a5d4a2115e0" loading="lazy"><figcaption data-i18n="t774217fda464">BM25 + code fusion. The gated version failed its gate; the fixed weight 0.1 was chosen after seeing the grid and remains an unconfirmed lead.</figcaption></figure>
 
-<h2 id="open">09 / What still holds, what does not, what is open</h2>
-<p><strong>Useful</strong></p>
+<h2 id="open" data-i18n="t0e6ef1aa9611">09 / What still holds, what does not, what is open</h2>
+<p data-i18n="tc0c0153505d0"><strong>Useful</strong></p>
 <ul class="clean">
-<li>Shortening the retrieved text cuts the reader's input by roughly 20&ndash;24% in every test so far, with a small observed drop in correct answers.</li>
-<li>When answers fail after shortening, it is mostly because a fact spread across several sessions was left out &mdash; a concrete target for the next design.</li>
-<li>Two lossless compactions shrink memory use without changing any result.</li>
+<li data-i18n="t8dabcfd4ac39">Shortening the retrieved text cuts the reader's input by roughly 20&ndash;24% in every test so far, with a small observed drop in correct answers.</li>
+<li data-i18n="t3df69e99967f">When answers fail after shortening, it is mostly because a fact spread across several sessions was left out &mdash; a concrete target for the next design.</li>
+<li data-i18n="t582051c707da">Two lossless compactions shrink memory use without changing any result.</li>
 </ul>
-<p><strong>Does not hold / withdrawn wording</strong></p>
+<p data-i18n="t465499b7775e"><strong>Does not hold / withdrawn wording</strong></p>
 <ul class="clean">
-<li>&ldquo;No loss&rdquo;, &ldquo;equivalent&rdquo; and &ldquo;ceiling&rdquo; have been withdrawn; the tests cannot support them.</li>
-<li>Token savings are not total cost savings: output, failures, search and grading are not counted.</li>
-<li>The compact code does not beat BM25; an earlier &ldquo;+10 points&rdquo; sign-code-over-float headline was retracted.</li>
+<li data-i18n="ta89214cf02ca">&ldquo;No loss&rdquo;, &ldquo;equivalent&rdquo; and &ldquo;ceiling&rdquo; have been withdrawn; the tests cannot support them.</li>
+<li data-i18n="t4d88dbe36940">Token savings are not total cost savings: output, failures, search and grading are not counted.</li>
+<li data-i18n="t0da69e37f49e">The compact code does not beat BM25; an earlier &ldquo;+10 points&rdquo; sign-code-over-float headline was retracted.</li>
 </ul>
-<p><strong>Open</strong></p>
+<p data-i18n="t961b26cc3857"><strong>Open</strong></p>
 <ul class="clean">
-<li>Does the ~23% saving carry over to data never seen before? This needs new data, one run, rules locked in advance.</li>
-<li>Can a shortener keep facts that are spread over several sessions?</li>
+<li data-i18n="t2cd4982b9cf4">Does the ~23% saving carry over to data never seen before? This needs new data, one run, rules locked in advance.</li>
+<li data-i18n="t9d1f190ce117">Can a shortener keep facts that are spread over several sessions?</li>
 </ul>
 
-<footer>Last updated 3 November 2026. Numbers are copied from the programme's own result files; the underlying
+<p class="project-update" data-i18n="tfabd09e41636">Last updated 3 November 2026. Numbers are copied from the programme's own result files; the underlying
 research workspace is private, and question-level data, prompts and model outputs are not published. Earlier
 public snapshot: <a href="https://github.com/haliltalhaertan/llmzip-public">LLMZIP Public Research Brief</a> (16 October 2026).
-Paper: <a href="https://github.com/haliltalhaertan/llmzip-paper">llmzip-paper</a>. <a href="../">Back to homepage</a>.</footer>
+Paper: <a href="https://github.com/haliltalhaertan/llmzip-paper">llmzip-paper</a>. <a href="../">Back to homepage</a>.</p>
+<footer class="site-footer"><span>Halil Talha Ertan <span aria-hidden="true">·</span> Istanbul</span><nav aria-label="Footer navigation" data-i18n-aria-label="ta32d98c0efff"><a href="../work/" data-i18n="t00040bab8a78">Work</a><a href="../researchs/" data-i18n="tbe601df25eea">Research</a><a href="https://github.com/haliltalhaertan" data-i18n="t5442e2b64fa0">GitHub</a><a href="https://www.linkedin.com/in/haliltalhaertan/" rel="me" data-i18n="t6b6390a44161">LinkedIn</a></nav><span class="updated" data-i18n="t4507c18fc95c">Updated 3 November 2026</span></footer>
 </main>
+<script src="../assets/offline-preview.js" defer></script>
 </body>
 </html>

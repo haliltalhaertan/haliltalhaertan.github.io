@@ -1,0 +1,41 @@
+:root{--surface:#fff;--surface-soft:#e8ede4;--selected:#e0e8df;--selected-ink:#164d49;--hover:#e6ece5;--warning:#f3e6cf;--warning-ink:#7a5418;color-scheme:light}
+html[data-theme="dark"]{--ink:#e7eee9;--muted:#b1c2bf;--accent:#88d1bf;--line:#3a4e52;--paper:#101c22;--surface:#18292f;--surface-soft:#20383c;--selected:#294640;--selected-ink:#d2eee2;--hover:#223b3c;--warning:#44371e;--warning-ink:#f0ce8d;color-scheme:dark}
+body{background:var(--paper);color:var(--ink)}
+a:hover{color:var(--accent)}
+.nav a{color:var(--muted)}
+.site-bar{flex-wrap:nowrap;column-gap:20px;row-gap:12px;padding:18px 0;min-height:92px}
+.site-nav{margin-left:auto}
+.site-preferences{display:flex;gap:3px;align-items:center;flex-shrink:0}
+.preference-control{position:relative}
+.preference-icon{display:flex;align-items:center;justify-content:center;width:36px;height:36px;padding:8px;border:0;border-radius:50%;background:transparent;color:var(--muted);cursor:pointer}
+.preference-icon:hover,.preference-icon[aria-expanded="true"]{background:var(--hover);color:var(--ink)}
+.site-preferences svg{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.site-preferences [hidden]{display:none!important}
+.site-preferences button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.preferences-panel{position:absolute;z-index:30;right:0;top:calc(100% + 9px);width:178px;max-width:calc(100vw - 44px);max-height:calc(100dvh - 90px);overflow-y:auto;padding:6px;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 32px #00000020}
+.preferences-panel button{display:flex;align-items:center;gap:10px;width:100%;min-height:35px;padding:8px 10px;border:0;border-radius:5px;background:transparent;color:var(--ink);font:400 .8rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;text-align:start;cursor:pointer}
+.preferences-panel button:hover,.preferences-panel button:focus-visible{background:var(--hover)}
+.preferences-panel button[aria-checked="true"]{color:var(--accent);background:var(--surface-soft)}
+.choice-check{margin-left:auto;visibility:hidden;font-size:.85rem}
+[aria-checked="true"]>.choice-check{visibility:visible}
+.theme-panel{width:154px}.theme-panel svg{width:17px;height:17px}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.site-nav a:hover{background:var(--hover);color:var(--ink)}
+.site-nav a[aria-current="page"]{background:var(--selected);color:var(--selected-ink)}
+.skip-link{background:var(--surface);color:var(--ink)}
+.home-route{border-color:var(--line)}
+.site-footer .updated{color:var(--muted)}
+.project-nav a,.research-archive,.expertise-card,figure,.tile,.card,.keys,.path-card,.pub-links a{background:var(--surface);border-color:var(--line)}
+.c-closed{border-left-color:#a9b6b4}.c-inc{border-left-color:#d89440}.c-np{border-left-color:#b5523b}.c-keep{border-left-color:#146b69}.c-open{border-left-color:#4b6fa8}
+.path-card:hover,.pub-links a:hover{background:var(--hover)}
+.plain,.tags,.crosslink{background:var(--surface-soft);border-color:var(--line)}
+.status{background:var(--warning);color:var(--warning-ink)}
+html[data-theme="dark"] .hero{background:#1b353d;border:1px solid #42615f}
+html[data-theme="dark"] figure img{background:#fff;border-radius:3px}
+html[data-theme="dark"] .tile .big.warm{color:#efbe79}
+html[data-theme="dark"] .tile .big.ink{color:var(--ink)}
+.site-footer nav{flex-wrap:wrap}
+html[lang="zh-CN"] .nav,html[lang="ja"] .nav,html[lang="ko"] .nav{letter-spacing:.06em}
+@media(max-width:950px){.wordmark span{display:none}}
+@media(max-width:650px){.site-bar{padding:14px 0 16px;gap:10px}.site-nav{margin-left:auto;flex-wrap:wrap;min-width:0;gap:0}.preference-icon{width:32px;height:32px;padding:6px}.site-preferences{align-self:flex-start;margin-top:1px}.site-nav a{padding:9px 6px;font-size:.72rem}.hero h1{overflow-wrap:anywhere}.site-footer nav{gap:12px 17px}}
+@media(max-width:460px){.site-bar>.wordmark{display:none}.site-nav{margin-left:0;margin-right:auto}}
