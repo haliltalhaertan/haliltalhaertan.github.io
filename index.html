@@ -81,12 +81,12 @@
   </figure>
 
   <p class="pub-title" style="margin-top:36px">Twelve Bytes Against an Inverted Index: What a Compact-Code Memory Retrieval Programme Found, and Which Configuration Choices Decided It</p>
-  <p class="pub-meta">H. T. Ertan &middot; Manuscript, 2026 &middot; <em>arXiv submission in preparation</em></p>
+  <p class="pub-meta">H. T. Ertan &middot; Manuscript, 2026</p>
   <div class="pub-links">
     <a href="https://github.com/haliltalhaertan/llmzip-paper">Paper, data ledger &amp; code</a>
   </div>
   <p>Can a 12-byte code per document replace or complement a BM25 index when an agent searches its
-  conversational memory? Across four benchmarks it does not beat BM25 on any measured axis.
+  conversational memory? In the reported four-benchmark exploratory programme, it did not beat BM25 on any measured axis.
   Five configuration choices (document unit, query cohort, projection family, benchmark and metric)
   each reversed a verdict with everything else fixed. Two lossless compactions leave every output bit
   unchanged while cutting the encoder vocabulary by about 63% and the BM25 index by about 76%.</p>
@@ -99,7 +99,28 @@
   <p>A context-selection research brief with aggregate findings, methodological limitations,
   and a proposed independent evaluation. Independent validation has not yet been carried out.</p>
 
-  <footer>Last updated 16 October 2026.</footer>
+  <p>The published pilot reports 419 correct answers with full retrieved sessions and 417 with
+  an older anchored selector, across 487 previously seen questions. Successful final reader calls
+  used 23.2% fewer input tokens with the selector. These figures do not establish equivalent accuracy,
+  generalization or end-to-end cost savings: there was no clean holdout, the questions form one
+  session-connected component, and failed calls, output tokens and evaluation costs are excluded.</p>
+  <p class="pub-meta">This is the 16 October public snapshot, not a new experiment.
+  It does not validate the newer full-exchange packer or untested router variants.
+  <a href="https://github.com/haliltalhaertan/llmzip-public/blob/main/docs/PROPOSED_EVALUATION.md">Proposed independent evaluation</a>.</p>
+
+  <h2>Public research contributions</h2>
+  <p class="pub-title">JoLT: byte-budget feasibility in discrete allocation</p>
+  <p class="pub-meta">1 November 2026 &middot; Public upstream correction</p>
+  <p>The JoLT repository published a correction to its rank and joint rank/bit allocators:
+  the bisection now retains a budget-feasible iterate and raises an error when the minimum allocation
+  cannot fit. The commit credits Halil Talha Ertan as the reporter. This is a source-level correction
+  and public contribution record; it does not establish revised benchmark results or paper authorship.</p>
+  <div class="pub-links">
+    <a href="https://github.com/rahulk98/JoLT-Master-Thesis/commit/11ab4a152aee9b338a6b79f93ebe794798d254b0">Upstream correction &amp; reporter credit</a>
+  </div>
+
+  <footer>Last updated 3 November 2026. Summaries reflect the linked public sources;
+  exploratory observations are distinguished from independent validation.</footer>
 </main>
 </body>
 </html>
