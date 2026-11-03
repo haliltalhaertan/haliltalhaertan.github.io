@@ -15,6 +15,8 @@ figure{margin:28px 0 48px;padding:24px;border:1px solid var(--line);border-radiu
 .fig-pair{display:grid;grid-template-columns:1fr;gap:0;max-width:790px}.fig-note{font-size:.8rem;color:var(--muted);max-width:790px}.status{display:inline-block;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:5px;background:#f3e6cf;color:#7a5418;margin-left:6px;vertical-align:middle}
 @media(max-width:600px){main{padding:0 22px}.hero{margin:14px -8px 36px;padding:42px 25px;border-radius:16px}.hero:after{opacity:.4}.links{gap:14px;font-size:.75rem}.links span{overflow-wrap:anywhere}.pub-title{font-size:1.4rem}figure{padding:12px}h2{margin-top:36px}.nav{gap:17px;font-size:.68rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.project-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:26px 0 40px;max-width:950px}.project-nav a{padding:18px 20px;border:1px solid var(--line);background:#fff;border-radius:10px;text-decoration:none}.project-nav strong{display:block;font:1.45rem Georgia,serif;color:var(--ink)}.project-nav span{display:block;margin-top:5px;font-size:.77rem;color:var(--muted)}.research-project{border-top:1px solid var(--line);padding-top:28px;margin-top:48px;scroll-margin-top:24px}.research-project h3{font:normal 2.3rem Georgia,serif;margin:0 0 22px;color:var(--accent)}.research-project>.pub-title{margin-top:0!important}.research-archive{max-width:850px;margin:20px 0;border:1px solid var(--line);border-radius:10px;background:#fff}.research-archive summary{cursor:pointer;padding:17px 20px;font-size:.88rem;font-weight:600;color:var(--accent)}.research-archive summary:focus-visible{outline:3px solid #d89440;outline-offset:3px}.archive-content{padding:8px 20px 20px}.archive-content>.pub-title:first-child{margin-top:0!important}.archive-content figure{margin-bottom:24px}.anchor-alias{display:block;scroll-margin-top:24px}@media(max-width:600px){.project-nav{grid-template-columns:1fr;gap:10px}.project-nav a{padding:14px 18px}.project-nav strong{font-size:1.3rem}.research-project h3{font-size:1.9rem}.archive-content{padding:4px 14px 16px}.research-archive summary{padding:15px}.research-project{margin-top:36px}}
 </style>
 <meta name="google-site-verification" content="9iA1u3zQxZ7jNj5uxIeOD-jphZN9gBbftM0Y5cydQx4" />
 </head>
@@ -33,7 +35,7 @@ figure{margin:28px 0 48px;padding:24px;border:1px solid var(--line);border-radiu
   </div>
 
   </header>
-  <nav class="nav" aria-label="Page sections"><a href="#about">About</a><a href="#papers">Research</a><a href="#updates">Updates</a><a href="#contributions">Contributions</a></nav>
+  <nav class="nav" aria-label="Page sections"><a href="#about">About</a><a href="#papers">Research</a><a href="#contributions">Contributions</a></nav>
   <h2 id="about">01 / About</h2>
   <p>I am interested in memory: how it can arise on its own in simple dynamical systems,
   and how it can be stored and searched cheaply in practical ones. One line of work studies network
@@ -44,8 +46,63 @@ figure{margin:28px 0 48px;padding:24px;border:1px solid var(--line);border-radiu
   and fully reproducible code.</p>
   <p class="tags"><strong>Interests:</strong> cellular automata, adaptive networks, complex systems, artificial life, information retrieval.</p>
 
-  <h2 id="papers">02 / Papers &amp; research</h2>
-  <p class="pub-title">Memory without mechanics: exact analysis of a particle-network automaton with rule-driven bonds</p>
+
+  <h2 id="papers">02 / Research projects</h2>
+  <span id="updates" class="anchor-alias" aria-hidden="true"></span>
+  <nav class="project-nav" aria-label="Research projects">
+    <a href="#autogenesis"><strong>Autogenesis</strong><span>Networks &amp; memory</span></a>
+    <a href="#llmzip"><strong>LLMZIP</strong><span>Retrieval &amp; context</span></a>
+    <a href="#zipgenesis"><strong>ZipGenesis</strong><span>Seeds &amp; compression</span></a>
+  </nav>
+  <section class="research-project" id="autogenesis" aria-labelledby="autogenesis-heading">
+    <h3 id="autogenesis-heading">Autogenesis</h3>
+      <p class="pub-title" id="autogenesis-2026-11">Autogenesis: small networks that repair themselves <span class="status">Work in progress</span></p>
+  <p class="pub-meta">20 October &ndash; 3 November 2026 &middot; Exploratory results, hand proofs plus one independent simulation; not peer-reviewed</p>
+  <p>After the U0 study, the project first looked for switches that the bond energy itself would hold
+  (an &ldquo;energy-reading&rdquo; universe, U1). Those searches came out mostly negative. The work then
+  turned to a different question: can a small network of on/off nodes store a pattern and put it back by
+  itself when a few nodes are flipped by mistake? The node rule is the same as in U0, but these networks are
+  designed by hand on a modified bond protocol, not grown by U0&rsquo;s physics.</p>
+  <figure>
+    <img src="img/autogenesis/autogenesis_timeline.svg" alt="Timeline of the autogenesis research from September to November 2026" loading="lazy">
+    <figcaption><strong>What happened when.</strong> Grey points mark mostly negative or inconclusive phases; the amber point is the independent re-check described below.</figcaption>
+  </figure>
+
+  <p>The clearest design, <strong>FAST40</strong>, has 40 nodes and 120 bonds, and every node has six
+  neighbours. It stores two patterns. A written hand proof claims that if any three nodes are flipped,
+  the network returns to the stored pattern within four steps, without changing a single bond.
+  A related 65-node design (FAST65) is claimed to do it in three steps; a further hand proof says that, within
+  that family of designs, three-step repair needs at least 65 nodes.</p>
+  <figure>
+    <img src="img/autogenesis/fast40_network.svg" alt="The FAST40 network: four rings of nodes X, Y, Z and W" loading="lazy">
+    <figcaption><strong>The FAST40 network</strong> in its stored pattern &ldquo;X+Z&rdquo;. Filled nodes are on. A node turns on in the next step exactly when one to three of its six neighbours are on.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="img/autogenesis/fast40_repair.svg" alt="Five snapshots of FAST40 repairing three flipped nodes" loading="lazy">
+    <figcaption><strong>Self-repair, step by step.</strong> Three Y nodes are switched on by mistake (red rings). The error first spreads to five nodes, then shrinks, and the stored pattern is back after four steps. This is the slowest kind of three-node error; it matches the hand proof step for step.</figcaption>
+  </figure>
+
+  <p><strong>Independent re-check (3 November 2026).</strong> FAST40 had so far been checked only on paper.
+  A separate program, written from the published definition alone, simulated it, including the bond-deletion counters, and tried
+  <em>every</em> way of flipping one, two, three or four nodes for both stored patterns.
+  All 21,400 cases with up to three flips were repaired within four steps, and no bond ever broke.
+  With four flips, 99.4% of 182,780 cases were still repaired within four steps, but 240 were never repaired,
+  so the guarantee really stops at three.</p>
+  <figure>
+    <img src="img/autogenesis/fast40_recovery.svg" alt="Bar chart of FAST40 repair times for one to four flipped nodes" loading="lazy">
+    <figcaption><strong>Every case, counted.</strong> Each bar is split by how many steps the repair took. Bars for one to three flips contain no amber or red at all.</figcaption>
+  </figure>
+
+  <p class="pub-meta">Limits: these are hand-designed networks on a modified bond protocol, not structures that
+  U0&rsquo;s physics forms on its own; during repair the bonds never change, so the node rule does all the work.
+  The FAST65 and lower-bound proofs have not been re-checked by computer. Related ideas exist in work on
+  fault-tolerant networks, error-correcting codes and associative memory, and a proper novelty check is still to be done.
+  The original U0 manuscript is not affected by these results.</p>
+
+
+    <details class="research-archive"><summary>Original U0 study · manuscript, code and figures</summary><div class="archive-content">
+        <p class="pub-title">Memory without mechanics: exact analysis of a particle-network automaton with rule-driven bonds</p>
   <p class="pub-meta">H. T. Ertan &middot; Autogenesis U0 &middot; Manuscript, 2026 &middot; not yet peer-reviewed</p>
   <div class="pub-links">
     <!-- <a href="https://arxiv.org/abs/XXXX.XXXXX">arXiv</a> -->
@@ -88,7 +145,26 @@ figure{margin:28px 0 48px;padding:24px;border:1px solid var(--line);border-radiu
     <figcaption><strong>An honest negative result.</strong> (a) Graphs built by the physics are no better than randomly rewired graphs with the same size and triangle count (98 above, 97 below the diagonal). (b) At rest, every bond set has exactly the same energy, so the mechanics cannot prefer one memory state over another.</figcaption>
   </figure>
 
-  <p class="pub-title" style="margin-top:36px">Twelve Bytes Against an Inverted Index: What a Compact-Code Memory Retrieval Programme Found, and Which Configuration Choices Decided It</p>
+
+    </div></details>
+  </section>
+  <section class="research-project" id="llmzip" aria-labelledby="llmzip-heading">
+    <h3 id="llmzip-heading">LLMZIP</h3>
+      <p class="pub-title" id="llmzip-2026-11" style="margin-top:36px"><a href="llmzip/">LLMZIP: what we found so far</a></p>
+  <p class="pub-meta">3 November 2026 &middot; Illustrated findings page &middot; Exploratory, not independently validated</p>
+  <p>A plain-language, figure-rich map of every recent LLMZIP test: shortening the context an AI reader sees
+  (about 23% fewer reader input tokens on already-seen LongMemEval-S questions), a held-out ConvoMem test that came out
+  inconclusive (19.55% saving against a pre-set 20% bar; 347 vs 350 correct of 500), why shortened answers fail,
+  and search and speed attempts that were not adopted.</p>
+  <div class="pub-links"><a href="llmzip/">Read the findings page</a></div>
+  <figure>
+    <a href="llmzip/"><img src="llmzip/fig/f2_token_reduction.svg" alt="Reader input-token reduction: 23.24%, 23.80% and 19.55% against a 20% bar."></a>
+    <figcaption>Reader input-token reduction of successful calls against full text. Not a total-cost figure. More figures on the <a href="llmzip/">findings page</a>.</figcaption>
+  </figure>
+
+
+    <details class="research-archive"><summary>Earlier manuscript · Twelve Bytes Against an Inverted Index</summary><div class="archive-content">
+        <p class="pub-title" style="margin-top:36px">Twelve Bytes Against an Inverted Index: What a Compact-Code Memory Retrieval Programme Found, and Which Configuration Choices Decided It</p>
   <p class="pub-meta">H. T. Ertan &middot; Manuscript, 2026</p>
   <div class="pub-links">
     <a href="https://github.com/haliltalhaertan/llmzip-paper">Paper, data ledger &amp; code</a>
@@ -102,77 +178,10 @@ figure{margin:28px 0 48px;padding:24px;border:1px solid var(--line);border-radiu
 
   <p class="pub-meta">Local exploratory pilot; not preregistered or for citation. The programme's code has not been independently audited.</p>
 
-  <h2 id="updates">03 / Research updates</h2>
-  <p class="pub-title" id="autogenesis-2026-11">Autogenesis: small networks that repair themselves <span class="status">Work in progress</span></p>
-  <p class="pub-meta">20 October &ndash; 3 November 2026 &middot; Exploratory results, hand proofs plus one independent simulation; not peer-reviewed</p>
-  <p>After the U0 study, the project first looked for switches that the bond energy itself would hold
-  (an &ldquo;energy-reading&rdquo; universe, U1). Those searches came out mostly negative. The work then
-  turned to a different question: can a small network of on/off nodes store a pattern and put it back by
-  itself when a few nodes are flipped by mistake? The node rule is the same as in U0, but these networks are
-  designed by hand on a modified bond protocol, not grown by U0&rsquo;s physics.</p>
-  <figure>
-    <img src="img/autogenesis/autogenesis_timeline.svg" alt="Timeline of the autogenesis research from September to November 2026" loading="lazy">
-    <figcaption><strong>What happened when.</strong> Grey points mark mostly negative or inconclusive phases; the amber point is the independent re-check described below.</figcaption>
-  </figure>
 
-  <p>The clearest design, <strong>FAST40</strong>, has 40 nodes and 120 bonds, and every node has six
-  neighbours. It stores two patterns. A written hand proof claims that if any three nodes are flipped,
-  the network returns to the stored pattern within four steps, without changing a single bond.
-  A related 65-node design (FAST65) is claimed to do it in three steps; a further hand proof says that, within
-  that family of designs, three-step repair needs at least 65 nodes.</p>
-  <figure>
-    <img src="img/autogenesis/fast40_network.svg" alt="The FAST40 network: four rings of nodes X, Y, Z and W" loading="lazy">
-    <figcaption><strong>The FAST40 network</strong> in its stored pattern &ldquo;X+Z&rdquo;. Filled nodes are on. A node turns on in the next step exactly when one to three of its six neighbours are on.</figcaption>
-  </figure>
-
-  <figure>
-    <img src="img/autogenesis/fast40_repair.svg" alt="Five snapshots of FAST40 repairing three flipped nodes" loading="lazy">
-    <figcaption><strong>Self-repair, step by step.</strong> Three Y nodes are switched on by mistake (red rings). The error first spreads to five nodes, then shrinks, and the stored pattern is back after four steps. This is the slowest kind of three-node error; it matches the hand proof step for step.</figcaption>
-  </figure>
-
-  <p><strong>Independent re-check (3 November 2026).</strong> FAST40 had so far been checked only on paper.
-  A separate program, written from the published definition alone, simulated it, including the bond-deletion counters, and tried
-  <em>every</em> way of flipping one, two, three or four nodes for both stored patterns.
-  All 21,400 cases with up to three flips were repaired within four steps, and no bond ever broke.
-  With four flips, 99.4% of 182,780 cases were still repaired within four steps, but 240 were never repaired,
-  so the guarantee really stops at three.</p>
-  <figure>
-    <img src="img/autogenesis/fast40_recovery.svg" alt="Bar chart of FAST40 repair times for one to four flipped nodes" loading="lazy">
-    <figcaption><strong>Every case, counted.</strong> Each bar is split by how many steps the repair took. Bars for one to three flips contain no amber or red at all.</figcaption>
-  </figure>
-
-  <p class="pub-meta">Limits: these are hand-designed networks on a modified bond protocol, not structures that
-  U0&rsquo;s physics forms on its own; during repair the bonds never change, so the node rule does all the work.
-  The FAST65 and lower-bound proofs have not been re-checked by computer. Related ideas exist in work on
-  fault-tolerant networks, error-correcting codes and associative memory, and a proper novelty check is still to be done.
-  The U0 manuscript above is not affected by these results.</p>
-
-  <p class="pub-title" id="zipgenesis-2026-11" style="margin-top:36px"><a href="zipgenesis/">ZipGenesis: can a tiny seed grow back into a file?</a></p>
-  <p class="pub-meta">3 November 2026 &middot; Work in progress &middot; Ongoing research log</p>
-  <p>ZipGenesis tested whether a short seed, grown by a fixed cellular rule, can stand in for a file.
-  In every test so far it lost to ordinary compression. The study then moved to careful tests of known table-compression
-  techniques, which gave a small gain on one real data set that mostly did not carry over to a second. The latest run is recorded as failed.</p>
-  <figure>
-    <div style="overflow-x:auto"><img src="zipgenesis/img/f4-cellular-vs-zip.svg" width="800" height="378" loading="lazy" style="min-width:620px" alt="Bar chart: cellular prediction totals 14,297 bytes versus 6,911 for ordinary compressors on 20 files."></div>
-    <figcaption>One of twelve figures on the findings page: on 20 practice files, the cellular approach was the largest option and was never chosen.</figcaption>
-  </figure>
-  <div class="pub-links">
-    <a href="zipgenesis/">Findings and figures</a>
-  </div>
-
-  <p class="pub-title" id="llmzip-2026-11" style="margin-top:36px"><a href="llmzip/">LLMZIP: what we found so far</a></p>
-  <p class="pub-meta">3 November 2026 &middot; Illustrated findings page &middot; Exploratory, not independently validated</p>
-  <p>A plain-language, figure-rich map of every recent LLMZIP test: shortening the context an AI reader sees
-  (about 23% fewer reader input tokens on already-seen LongMemEval-S questions), a held-out ConvoMem test that came out
-  inconclusive (19.55% saving against a pre-set 20% bar; 347 vs 350 correct of 500), why shortened answers fail,
-  and search and speed attempts that were not adopted.</p>
-  <div class="pub-links"><a href="llmzip/">Read the findings page</a></div>
-  <figure>
-    <a href="llmzip/"><img src="llmzip/fig/f2_token_reduction.svg" alt="Reader input-token reduction: 23.24%, 23.80% and 19.55% against a 20% bar."></a>
-    <figcaption>Reader input-token reduction of successful calls against full text. Not a total-cost figure. More figures on the <a href="llmzip/">findings page</a>.</figcaption>
-  </figure>
-
-  <p class="pub-title" style="margin-top:36px"><a href="https://github.com/haliltalhaertan/llmzip-public">LLMZIP Public Research Brief</a></p>
+    </div></details>
+    <details class="research-archive"><summary>Earlier public research brief · 16 October 2026</summary><div class="archive-content">
+        <p class="pub-title" style="margin-top:36px"><a href="https://github.com/haliltalhaertan/llmzip-public">LLMZIP Public Research Brief</a></p>
 
   <p class="pub-meta">16 October 2026 &middot; Documentation-only exploratory research snapshot</p>
   <p>A context-selection research brief with aggregate findings, methodological limitations,
@@ -187,7 +196,27 @@ figure{margin:28px 0 48px;padding:24px;border:1px solid var(--line);border-radiu
   It does not validate the newer full-exchange packer or untested router variants.
   <a href="https://github.com/haliltalhaertan/llmzip-public/blob/main/docs/PROPOSED_EVALUATION.md">Proposed independent evaluation</a>.</p>
 
-  <h2 id="contributions">04 / Public contributions</h2>
+
+    </div></details>
+  </section>
+  <section class="research-project" id="zipgenesis" aria-labelledby="zipgenesis-heading">
+    <h3 id="zipgenesis-heading">ZipGenesis</h3>
+      <p class="pub-title" id="zipgenesis-2026-11" style="margin-top:36px"><a href="zipgenesis/">ZipGenesis: can a tiny seed grow back into a file?</a></p>
+  <p class="pub-meta">3 November 2026 &middot; Work in progress &middot; Ongoing research log</p>
+  <p>ZipGenesis tested whether a short seed, grown by a fixed cellular rule, can stand in for a file.
+  In every test so far it lost to ordinary compression. The study then moved to careful tests of known table-compression
+  techniques, which gave a small gain on one real data set that mostly did not carry over to a second. The latest run is recorded as failed.</p>
+  <figure>
+    <div style="overflow-x:auto"><img src="zipgenesis/img/f4-cellular-vs-zip.svg" width="800" height="378" loading="lazy" style="min-width:620px" alt="Bar chart: cellular prediction totals 14,297 bytes versus 6,911 for ordinary compressors on 20 files."></div>
+    <figcaption>One of twelve figures on the findings page: on 20 practice files, the cellular approach was the largest option and was never chosen.</figcaption>
+  </figure>
+  <div class="pub-links">
+    <a href="zipgenesis/">Findings and figures</a>
+  </div>
+
+
+  </section>
+  <h2 id="contributions">03 / Public contributions</h2>
   <p class="pub-title">JoLT: byte-budget feasibility in discrete allocation</p>
   <p class="pub-meta">1 November 2026 &middot; Public upstream correction</p>
   <p>The JoLT repository published a correction to its rank and joint rank/bit allocators:
