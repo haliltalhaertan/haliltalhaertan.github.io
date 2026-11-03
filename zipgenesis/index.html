@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZipGenesis: findings so far | Halil Talha Ertan</title>
+<meta name="description" content="ZipGenesis is an ongoing study of whether a short seed, grown by a fixed cellular rule, can stand in for a file. Plain-language findings with figures, updated 3 November 2026.">
+<link rel="canonical" href="https://haliltalhaertan.github.io/zipgenesis/">
+<style>
+
+:root{--ink:#172d35;--muted:#53676c;--accent:#146b69;--line:#d9e1df;--paper:#f5f6f2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:4px}a:hover{color:#0a4241}a:focus-visible{outline:3px solid #d89440;outline-offset:5px}main{max-width:1120px;padding:0 32px;margin:auto}
+.hero{position:relative;overflow:hidden;background:#142e36;color:#f5f6ef;padding:70px 56px 60px;margin:28px -8px 56px;border-radius:24px}.hero:after{content:"";position:absolute;width:390px;height:390px;right:-120px;top:-130px;border:1px solid #668780;border-radius:50%;box-shadow:0 0 0 54px #ffffff06,0 0 0 110px #ffffff04;pointer-events:none}.eyebrow{text-transform:uppercase;font-size:.72rem;letter-spacing:.23em;color:#b7d4ca;font-weight:650;margin:0 0 24px}h1{font:normal clamp(2.6rem,6vw,4.5rem)/1.05 Georgia,serif;letter-spacing:-.035em;margin:0 0 18px;max-width:720px}.affil{font-size:1.03rem;color:#bdcfce;margin:0 0 22px}.hero-summary{font:normal clamp(1.15rem,2vw,1.5rem)/1.45 Georgia,serif;max-width:570px;color:#e4ece6}.links{display:flex;gap:20px;flex-wrap:wrap;font-size:.82rem;margin-top:32px;position:relative;z-index:1}.links a{color:#d0e5dc}.links span{color:#b7cac9}.nav{display:flex;gap:25px;flex-wrap:wrap;margin:0 0 28px;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em}.nav a{text-decoration:none;color:#60716e}
+h2{font-size:.73rem;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);border-top:1px solid var(--line);padding-top:22px;margin:48px 0 24px;font-weight:700}p{max-width:790px}.pub-title{font:normal clamp(1.4rem,2.5vw,1.9rem)/1.3 Georgia,serif;margin:0 0 12px;max-width:850px}.pub-meta{font-size:.84rem;color:var(--muted);line-height:1.65}.pub-links{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 24px}.pub-links a{border:1px solid #b8ccca;padding:7px 13px;border-radius:6px;font-size:.78rem;text-decoration:none;background:#fff}.pub-links a:hover{background:#e5eeea}
+figure{margin:28px 0 48px;padding:24px;border:1px solid var(--line);border-radius:14px;background:#fff;max-width:790px}figure img{display:block;width:100%;height:auto}figcaption{font-size:.8rem;color:var(--muted);line-height:1.6;margin-top:18px}.tags{font-size:.82rem;padding:14px 18px;border-left:3px solid #d7aa67;background:#ecefe7;max-width:790px}footer{border-top:1px solid var(--line);margin:60px 0 0;padding:22px 0 40px;color:var(--muted);font-size:.75rem;max-width:850px}
+@media(max-width:600px){main{padding:0 22px}.hero{margin:14px -8px 36px;padding:42px 25px;border-radius:16px}.hero:after{opacity:.4}.links{gap:14px;font-size:.75rem}.links span{overflow-wrap:anywhere}.pub-title{font-size:1.4rem}figure{padding:12px}h2{margin-top:36px}.nav{gap:17px;font-size:.68rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.back{display:inline-block;margin-top:26px;font-size:.8rem;color:#d0e5dc;position:relative;z-index:1}
+.keys{max-width:790px;padding:20px 26px;background:#fff;border:1px solid var(--line);border-radius:14px;margin:0 0 10px}.keys li{margin:6px 0}
+.status{font-size:.86rem;padding:12px 18px;border-left:3px solid #c47a1c;background:#fbf4ea;max-width:790px;margin:18px 0}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}.scroll img{min-width:620px}
+h3{font:normal 1.35rem/1.35 Georgia,serif;margin:34px 0 8px;max-width:790px}
+.small{font-size:.84rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <header class="hero">
+  <p class="eyebrow">Research log · work in progress</p>
+  <h1>ZipGenesis</h1>
+  <p class="affil">Can a tiny seed grow back into a file?</p>
+  <p class="hero-summary">A plain-language report of an ongoing compression study, with every number taken from its saved test records.</p>
+  <a class="back" href="../">← Halil Talha Ertan · home</a>
+  </header>
+  <nav class="nav" aria-label="Page sections"><a href="#glance">At a glance</a><a href="#idea">Idea</a><a href="#seed">Seed tests</a><a href="#tables">Tables</a><a href="#latest">Latest run</a><a href="#all">All tests</a><a href="#method">How it is run</a></nav>
+
+  <h2 id="glance">00 / At a glance</h2>
+  <ul class="keys">
+    <li>The original idea, storing a short <em>seed</em> that a fixed cellular rule grows back into the data, <strong>did not beat ordinary compression in any test</strong>.</li>
+    <li>The work then moved to ordinary table compression: coding each column well, and using links between columns. This gave <strong>small gains on one real data set</strong> (air quality) that <strong>mostly did not carry over</strong> to a second one (wine quality).</li>
+    <li>The latest run broke its own output-size limit and is <strong>recorded as failed</strong>.</li>
+    <li>Every compressed packet was decoded back and compared byte for byte. Negative results are kept, not hidden.</li>
+  </ul>
+  <p class="status"><strong>Status, 3 November 2026:</strong> paused, waiting for the next planned checkpoint. No result so far counts as a compression advance.</p>
+
+  <h2 id="idea">01 / The idea</h2>
+  <p>Ordinary compression (zip) looks for repeats inside a file. ZipGenesis asked a different question.
+  Suppose sender and receiver share a fixed rule, like the cell-by-cell update rules of a cellular automaton.
+  Could the sender then transmit only a short starting pattern, a <em>seed</em>, and let the rule grow the file back exactly?
+  The idea only pays off if the seed plus everything needed to read it is smaller than what zip already gives.</p>
+  <figure>
+    <div class="scroll"><img src="img/f1-idea.svg" width="800" height="340" loading="lazy" alt="Diagram: ordinary compression versus growing a file from a small seed with a fixed rule."></div>
+    <figcaption>Concept sketch. The grid is an illustration of a simple cellular rule growing from one cell (rule 90), not one of the tested rules.</figcaption>
+  </figure>
+
+  <h2 id="seed">02 / Testing the seed idea</h2>
+  <h3>A small rule can only make a few different things</h3>
+  <p>The first test tried every seed of a small cellular rule on a ring of 32 cells: 4,096 seeds in total.
+  They produced only 335 different 4-byte results, and many seeds landed on the same few results.
+  Out of 1,024 random 4-byte test files, the rule could produce none exactly.</p>
+  <figure>
+    <div class="scroll"><img src="img/f2-seed-capacity.svg" width="800" height="396" loading="lazy" alt="Bar chart: 4096 seeds collapse onto 335 distinct outputs; 542 seeds give all zeros."></div>
+    <figcaption>Test ZG-010. Each bar is one of the 335 reachable results, ranked by how many of the 4,096 seeds produce it. Only 1 of 16 hand-picked simple patterns (all zeros) was reachable.</figcaption>
+  </figure>
+
+  <h3>On tiny files, fixed overhead dominates</h3>
+  <p>Even when a seed does exist, the packet that carries it needs a header and a few bytes of bookkeeping.
+  For files of four or five bytes, every option ends up bigger than the file.</p>
+  <figure>
+    <div class="scroll"><img src="img/f3-tiny-files.svg" width="800" height="368" loading="lazy" alt="Bar chart of packet sizes for a 4-byte and a 5-byte file."></div>
+    <figcaption>Tests ZG-010 and ZG-020. Actual packet sizes in bytes. In ZG-020 a direct pick from a known list was also smaller than the seed.</figcaption>
+  </figure>
+
+  <h3>Using the rule as a guess, then fixing the errors</h3>
+  <p>A more practical version uses the rule only as a first guess and then stores the differences.
+  On 20 practice files this was the largest option of all, and never the best one. A plain lookup table with the same guesses
+  gives exactly the same size, so the cellular rule adds nothing here.</p>
+  <figure>
+    <div class="scroll"><img src="img/f4-cellular-vs-zip.svg" width="800" height="378" loading="lazy" alt="Bar chart: cellular prediction totals 14,297 bytes versus 6,911 for ordinary compressors on 20 files."></div>
+    <figcaption>Test ZG-040, 20 practice files. Teal = ordinary compressors; gold = the cellular approach. The 8-byte edge of the best mix comes from a simple repeat trick, not from the rule.</figcaption>
+  </figure>
+
+  <h3>Seeds are fragile</h3>
+  <p>One hoped-for advantage was robustness: if many seeds give the same result, a damaged seed might still work.
+  It did not. Flipping one bit of the seed gave back the right file in 184 of 3,072 cases. An ordinary error-correcting code
+  (a Hamming code) of the same size recovered all 3,072.</p>
+  <figure>
+    <div class="scroll"><img src="img/f5-bit-flip.svg" width="800" height="369" loading="lazy" alt="Grid of 3,072 single-bit errors: 184 survive with the cellular seed, all 3,072 with a Hamming code."></div>
+    <figcaption>Test ZG-060, 256 shared targets, 12 single-bit errors each. Coloured squares are errors after which the original data still came back. No tested target had a seed that survived every single-bit error.</figcaption>
+  </figure>
+
+  <h2 id="tables">03 / Turning to ordinary table compression</h2>
+  <p>After the seed tests, the study moved to well-known techniques and tested them carefully on real tables.
+  These are established ideas from the compression literature, not new inventions; the aim was to measure honestly what they add.</p>
+  <h3>Shared dictionaries for many small pieces</h3>
+  <p>When many small blocks must be stored separately, a dictionary shared by sender and receiver helps a lot.
+  But if the blocks may simply be zipped together, that is smaller still. The project’s own special tricks added very little beyond ordinary zip with the same dictionary.</p>
+  <figure>
+    <div class="scroll"><img src="img/f7-shared-dictionary.svg" width="800" height="220" loading="lazy" alt="Bar chart of total bytes for 256 blocks with and without a shared dictionary."></div>
+    <figcaption>Test ZG-049, 256 small blocks. The dictionary’s own size is paid back after about 178 blocks. Results assume the shared dictionary is already installed on both sides.</figcaption>
+  </figure>
+
+  <h3>Air-quality tables: a real but narrow gain</h3>
+  <p>Coding each column of a table well (for example storing small differences between rows) cut the size by about a third compared with the project’s older tools.
+  Adding links between columns saved another 4.1%. Once the decoder program itself is counted, the lead over the best earlier option shrinks to 403 bytes.</p>
+  <figure>
+    <div class="scroll"><img src="img/f8-airquality.svg" width="800" height="393" loading="lazy" alt="Bar chart of bytes for air-quality test blocks under older tools, new column coding, and decoder cost."></div>
+    <figcaption>Test ZG-073, 16 untouched test blocks of the UCI Air Quality data. The decoder is counted once, as uncompressed source code; installation size was not measured.</figcaption>
+  </figure>
+
+  <h3>Wine tables: the gain mostly disappears</h3>
+  <p>The same method, unchanged, was then tried on a second real data set. Per file it saved only 144 bytes (0.8%).
+  When all blocks may be stored together, ordinary zip (DEFLATE) of the whole set was clearly the smallest.</p>
+  <figure>
+    <div class="scroll"><img src="img/f9-wine.svg" width="800" height="327" loading="lazy" alt="Bar chart of bytes for wine-quality blocks; plain DEFLATE of the whole set is smallest."></div>
+    <figcaption>Test ZG-075, 16 untouched test blocks of the UCI Wine Quality (white) data. The pre-set success test required a gain in both views; it was not met.</figcaption>
+  </figure>
+
+  <h3>A check that the method finds what it claims</h3>
+  <p>On made-up tables, the column-link method saved bytes only when the columns were truly related.
+  When the rows of each column were shuffled, breaking the links, the gain vanished. This shows the method works as designed, even though the real-data gains are small.</p>
+  <figure>
+    <div class="scroll"><img src="img/f11-sanity-check.svg" width="800" height="328" loading="lazy" alt="Bars: 349 and 901 bytes saved on related columns, 1 and 0 when shuffled."></div>
+    <figcaption>Test ZG-076, 32 made-up files in 16 related/shuffled pairs. Shuffling keeps each column’s values but breaks the relation between columns.</figcaption>
+  </figure>
+
+  <h2 id="latest">04 / Latest run</h2>
+  <p>The most recent test used fresh records from both real sources at once. The new method was 616 bytes smaller on air quality but 871 bytes bigger on wine.
+  The run also wrote slightly more output than the limit it had set for itself, so by its own rules it counts as failed. It will not be repeated on the same data.</p>
+  <figure>
+    <div class="scroll"><img src="img/f10-latest-run.svg" width="800" height="272" loading="lazy" alt="Diverging bars: +616 bytes on air quality, -871 bytes on wine; output exceeded limit by 79,584 bytes."></div>
+    <figcaption>Test ZG-077, 16 test blocks per source. Bars compare the new method with the strongest ordinary option. The output limit was set in advance by the study itself.</figcaption>
+  </figure>
+
+  <h2 id="all">05 / All experiments at a glance</h2>
+  <figure>
+    <div class="scroll"><img src="img/f6-all-experiments.svg" width="800" height="728" loading="lazy" alt="Table of 25 ZipGenesis experiments coloured by outcome."></div>
+    <figcaption>Every numbered experiment on the research branch, in run order. Categories are a plain-language summary of each test’s recorded verdict.</figcaption>
+  </figure>
+
+  <h2 id="method">06 / How the work is run</h2>
+  <p>The experiments are planned and run by an autonomous AI research agent following a written research plan.
+  For each test the rules, data and success bar are fixed before the test data are opened; test data are used once and then retired.
+  Every packet is decoded again, also in a separate locked-down process, and must match the original byte for byte.</p>
+  <figure>
+    <div class="scroll"><img src="img/f12-budget.svg" width="800" height="176" loading="lazy" alt="Progress bar: 981 of 14,400 CPU-seconds used."></div>
+    <figcaption>Resource ledger after the latest run. Limits were set in advance by the project owner.</figcaption>
+  </figure>
+
+  <p class="small"><strong>Limits.</strong> This is an exploratory pilot. The code and logs are in a private repository and have not been independently replicated or peer reviewed.
+  Results hold only for the data and settings named. Totals from different data sets are not comparable with each other.</p>
+  <p class="small"><strong>Data.</strong> Air Quality, UCI Machine Learning Repository, <a href="https://doi.org/10.24432/C59K5F">doi:10.24432/C59K5F</a>.
+  Wine Quality (P. Cortez et al., 2009), UCI Machine Learning Repository, <a href="https://doi.org/10.24432/C56S3T">doi:10.24432/C56S3T</a>. Both CC BY 4.0.</p>
+  <p class="small"><strong>Related work.</strong> Using links between table columns is known, for example in
+  <a href="https://arxiv.org/abs/2403.17229">Corra</a> and <a href="https://github.com/cwida/C3">C3</a>. These tests measure it under strict accounting; they do not claim a new method.</p>
+
+  <footer>Last updated 3 November 2026. All figures are drawn from the saved test records of the ZipGenesis research branch.
+  <a href="../">Back to home</a>.</footer>
+</main>
+</body>
+</html>
