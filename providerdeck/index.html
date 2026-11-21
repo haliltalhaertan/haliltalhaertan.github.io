@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src="../assets/preferences-init.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="pdTitle">ProviderDeck | Track Codex quotas and OpenRouter balances on Windows</title>
+<meta name="description" content="ProviderDeck is a local dashboard and Windows tray app for AI coding quotas, API balances, and comparing model costs with cached input." data-i18n-content="pdDesc">
+<link rel="canonical" href="https://haliltalhaertan.github.io/providerdeck/">
+<meta name="theme-color" content="#142e36">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ProviderDeck | Track Codex quotas and OpenRouter balances on Windows" data-i18n-content="pdTitle">
+<meta property="og:description" content="ProviderDeck is a local dashboard and Windows tray app for AI coding quotas, API balances, and comparing model costs with cached input." data-i18n-content="pdDesc">
+<meta property="og:url" content="https://haliltalhaertan.github.io/providerdeck/">
+<meta property="og:image" content="https://haliltalhaertan.github.io/providerdeck/dashboard-demo.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/preferences.css">
+<style>
+.pd-demo{margin:0 0 36px;padding:12px;border:1px solid var(--line);border-radius:14px}
+.pd-demo img{display:block;width:100%;height:auto;border-radius:8px}
+.pd-demo figcaption{padding:8px 2px 0;color:var(--muted);font-size:.82rem}
+.pd-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pd-start pre{padding:18px;overflow:auto;border:1px solid var(--line);border-radius:10px;font-size:.87rem;line-height:1.6}
+@media(max-width:750px){.pd-grid{grid-template-columns:1fr}}
+</style>
+<script src="../assets/translations.js" defer></script>
+<script src="../assets/work-projects-i18n.js" defer></script>
+<script src="../assets/providerdeck-i18n.js" defer></script>
+<script src="../assets/preferences.js" defer></script>
+</head>
+<body>
+<div class="site-shell"><a class="skip-link" href="#main-content" data-i18n="t0a4470d64e9d">Skip to content</a>
+<div class="site-bar"><a class="wordmark" href="../" aria-label="Halil Talha Ertan, home" data-i18n-aria-label="t88a4f5eae7a2" data-i18n="t7994fc02be80">HTE<span>Halil Talha Ertan</span></a>
+<nav class="site-nav" aria-label="Main navigation" data-i18n-aria-label="tefd197f3fce4">
+<a href="../" data-i18n="t70f8bb9a8a53">Home</a><a href="../work/" data-i18n="t00040bab8a78">Work</a><a href="../researchs/" data-i18n="tbe601df25eea">Research</a>
+</nav><div class="site-preferences"><div class="preference-control"><button type="button" class="preference-icon" id="language-toggle" aria-label="Language" title="Language" aria-haspopup="menu" aria-expanded="false" aria-controls="language-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4 6 4 9s-1 6-4 9c-3-3-4-6-4-9s1-6 4-9Z"/></svg></button><div class="preferences-panel" id="language-panel" role="menu" aria-label="Language" hidden><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="en" lang="en"><span>English</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="de" lang="de"><span>Deutsch</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="tr" lang="tr"><span>Türkçe</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="zh" lang="zh"><span>简体中文</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="ru" lang="ru"><span>Русский</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="ja" lang="ja"><span>日本語</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="ko" lang="ko"><span>한국어</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-language="es" lang="es"><span>Español</span><span class="choice-check" aria-hidden="true">✓</span></button></div></div><div class="preference-control"><button type="button" class="preference-icon" id="theme-toggle" aria-label="Appearance" title="Appearance" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-panel"><svg viewBox="0 0 24 24" aria-hidden="true" data-theme-icon="system"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" data-theme-icon="light" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" data-theme-icon="dark" hidden><path d="M20.8 13.5A9 9 0 0 1 10.5 3.2 9 9 0 1 0 20.8 13.5Z"/></svg></button><div class="preferences-panel theme-panel" id="theme-panel" role="menu" aria-label="Appearance" hidden><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-theme="system"><svg viewBox="0 0 24 24" aria-hidden="true" ><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span data-ui="system">System</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-theme="light"><svg viewBox="0 0 24 24" aria-hidden="true" ><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><span data-ui="light">Light</span><span class="choice-check" aria-hidden="true">✓</span></button><button type="button" role="menuitemradio" aria-checked="false" tabindex="-1" data-theme="dark"><svg viewBox="0 0 24 24" aria-hidden="true" ><path d="M20.8 13.5A9 9 0 0 1 10.5 3.2 9 9 0 1 0 20.8 13.5Z"/></svg><span data-ui="dark">Dark</span><span class="choice-check" aria-hidden="true">✓</span></button></div></div></div></div></div>
+<main id="main-content" tabindex="-1">
+<header class="hero">
+  <p class="eyebrow" data-i18n="pdEyebrow">Project / AI developer tools</p>
+  <h1>ProviderDeck</h1>
+  <p class="hero-summary" data-i18n="pdLead">Track Codex quotas and OpenRouter balances in one local dashboard.</p>
+  <div class="hero-actions">
+    <a href="https://github.com/haliltalhaertan/ProviderDeck" data-i18n="workRepoLink">View on GitHub</a>
+    <a href="#quick-start" data-i18n="pdStart">Quick start</a>
+  </div>
+</header>
+<figure class="pd-demo">
+  <img src="dashboard-demo.png" width="1024" height="640" alt="ProviderDeck dashboard with account balances, provider status and cost estimates" data-i18n-alt="pdCaption" decoding="async">
+  <figcaption data-i18n="pdCaption">Dashboard with synthetic data. Balances and prices are examples.</figcaption>
+</figure>
+<section aria-labelledby="features-title">
+  <div class="section-intro"><h2 id="features-title" data-i18n="pdFeatures">What it does</h2></div>
+  <div class="expertise-grid pd-grid">
+    <article class="expertise-card"><h3 data-i18n="pdQuota">Coding quotas</h3><p data-i18n="pdQuotaText">See Codex and Claude Code usage in one place.</p></article>
+    <article class="expertise-card"><h3 data-i18n="pdBalance">API balances</h3><p data-i18n="pdBalanceText">Check supported accounts such as OpenRouter from the same dashboard.</p></article>
+    <article class="expertise-card"><h3 data-i18n="pdCosts">Model costs</h3><p data-i18n="pdCostsText">Compare estimated costs using your expected input, cached input, and output token counts.</p></article>
+  </div>
+</section>
+<section class="pd-start" id="quick-start" aria-labelledby="start-title">
+  <h2 id="start-title" data-i18n="pdStart">Quick start</h2>
+  <p data-i18n="pdStartText">Run from source with Python 3.10 or later. These steps are for Windows PowerShell.</p>
+  <pre><code>git clone https://github.com/haliltalhaertan/ProviderDeck.git
+cd ProviderDeck
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe launch.py</code></pre>
+  <p><a href="https://github.com/haliltalhaertan/ProviderDeck#manual-quick-start" data-i18n="pdInstall">Full setup guide</a></p>
+</section>
+<section aria-labelledby="privacy-title">
+  <h2 id="privacy-title" data-i18n="pdPrivacy">Local dashboard</h2>
+  <p data-i18n="pdPrivacyText">The dashboard runs on your computer. Live refresh contacts the configured providers.</p>
+</section>
+<footer class="site-footer"><span>Halil Talha Ertan <span aria-hidden="true">·</span> Istanbul</span><nav aria-label="Footer navigation" data-i18n-aria-label="ta32d98c0efff"><a href="../work/" data-i18n="t00040bab8a78">Work</a><a href="../researchs/" data-i18n="tbe601df25eea">Research</a><a href="https://github.com/haliltalhaertan" data-i18n="t5442e2b64fa0">GitHub</a><a href="https://www.linkedin.com/in/haliltalhaertan/" rel="me" data-i18n="t6b6390a44161">LinkedIn</a><a href="https://medium.com/@haliltalhaertan" rel="me">Medium</a></nav></footer>
+</main>
+</body>
+</html>
